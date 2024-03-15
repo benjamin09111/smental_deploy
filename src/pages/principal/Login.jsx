@@ -3,6 +3,7 @@ import { useState } from 'react'
 const Login = ({ setState }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState("");
     const [emailP, setEmailP] = useState("");
@@ -31,7 +32,7 @@ const Login = ({ setState }) => {
                 <input type="password" name='password' className='input'
                     value={password} onChange={(e) => setPassword(e.target.value)} />
             </div>
-            <button className='w-full mt-4 py-2 bg-third-custom hover:bg-third-custom/80' type='button' onClick={signin}>Iniciar sesión</button>
+            <button className='w-full mt-4 py-2 back2 hover:bg-gray-800' type='button' onClick={signin}>Iniciar sesión</button>
             <div className='text-center'>¿No tienes una cuenta? <b className='cursor-pointer' onClick={()=>setState("register")}>Regístrate.</b></div>
             <p className='text-secondary-custom'>{message}</p>
             {
@@ -42,9 +43,9 @@ const Login = ({ setState }) => {
                     </div>
                 )
             }
-            <div>Al ingresar a la aplicación, estás aceptando los <b className='underline text-secondary-custom cursor-pointer'>términos y condiciones</b>.</div>
+            <div>Al ingresar a la aplicación, estás aceptando los <b className='underline text cursor-pointer'>términos y condiciones</b>.</div>
             <div className=''>
-                Si quieres registrarte como psicólogo, puedes enviar tu email <b className='text-secondary-custom cursor-pointer' onClick={() => setOpen(!open)}>aquí</b>.
+                Si quieres registrarte como psicólogo, puedes enviar tu email <b className='text cursor-pointer' onClick={() => setOpen(!open)}>aquí</b>.
             </div>
             {
                 open && (

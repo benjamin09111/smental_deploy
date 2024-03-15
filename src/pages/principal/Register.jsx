@@ -5,6 +5,7 @@ const Register = ({ setState }) => {
     const [loading, setLoading] = useState(false);
     const [open, setOpen] = useState(false);
     const [emailP, setEmailP] = useState("");
+
     const [data, setData] = useState({
         username: "",
         email: "",
@@ -13,7 +14,7 @@ const Register = ({ setState }) => {
     });
 
     const signup = () => {
-
+        
     }
 
     return (

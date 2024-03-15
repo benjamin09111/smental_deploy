@@ -4,12 +4,20 @@
 
 :root {
   --font-family: Arial;
+  --primary-color: #000105;
+  --secondary-color: #020305e0;
+  --third-color: #177cb6;
+  --fourth-color: #ba4dece5;
 }
 
 /* estilos generales / que se repiten */
 
 body {
   background: #dfdce3;
+}
+
+.back {
+  background: linear-gradient(var(--primary-color), var(--secondary-color));
 }
 
 .bg_overlay {
@@ -21,6 +29,13 @@ body {
   background: rgba(0, 0, 0, 0.509);
 }
 
+.back2 {
+  background: var(--third-color);
+}
+
+.text {
+  color: var(--fourth-color);
+}
 
 .input {
   color: black;
