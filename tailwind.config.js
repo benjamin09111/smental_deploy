@@ -7,7 +7,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "primary-custom": "#49c5b6",
+        "secondary-custom": "#fc4a1a",
+        "third-custom": "#f7b733",
+        "fourth-custom": "#dfdce3",
+      },
+
+    },
   },
   plugins: [
     addDynamicIconSelectors(),
