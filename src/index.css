@@ -8,6 +8,10 @@
 
 /* estilos generales / que se repiten */
 
+body {
+  background: #dfdce3;
+}
+
 .bg_overlay {
   top: 0;
   left: 0;
@@ -15,4 +19,13 @@
   height: 100vh;
   z-index: 99999;
   background: rgba(0, 0, 0, 0.509);
+}
+
+
+.input {
+  color: black;
+}
+
+.input:focus {
+  outline: none;
 }
