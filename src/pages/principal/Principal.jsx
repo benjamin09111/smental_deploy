@@ -1,15 +1,21 @@
 import { useState } from "react";
 import Wave from "react-wavify";
+import Login from "./Login";
+import Register from "./Register";
 
 const Principal = () => {
+    const [state, setState] = useState("login");
     //pagina que se ve al no estar logeado, get started
     return (
-        <div className="flex">
-            <div>
-                Bienvenido a
-            </div>
-            <div>
-
+        <div className="flex flex-col">
+            <div className="flex">
+                <div>
+                    Bienvenido a
+                </div>
+                <div>
+                    {state === "login" && <Login setState={setState} />}
+                    {state === "register" && <Register setState={setState} />}
+                </div>
             </div>
 
             {/*animación de una wave*/}
