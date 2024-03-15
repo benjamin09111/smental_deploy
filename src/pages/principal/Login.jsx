@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import Overlay from "./Overlay";
 
 const Login = ({ setState }) => {
     const [email, setEmail] = useState("");
@@ -6,7 +7,6 @@ const Login = ({ setState }) => {
     
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState("");
-    const [emailP, setEmailP] = useState("");
     const [open, setOpen] = useState(false);
 
     const signin = () => {
@@ -47,20 +47,7 @@ const Login = ({ setState }) => {
             <div className=''>
                 Si quieres registrarte como psicólogo, puedes enviar tu email <b className='text cursor-pointer' onClick={() => setOpen(!open)}>aquí</b>.
             </div>
-            {
-                open && (
-                    <>
-
-                        <div className='flex flex-col gap-3'>
-                            <input type="text" className='px-2 py-1 text-black/80 bg-white/90 focus:outline-none' placeholder='Tu correo electrónico'
-                                value={emailP} onChange={(e) => setEmailP(e.target.value)} />
-                            <button type='button' className='bg-secondary-custom px-2 py-1 hover:bg-secondary-custom/90'>Enviar registro</button>
-                        </div>
-                        <p className='underline text-xs'>Recibirás un correo con la información del registro de psicólogo, además de las instrucciones.</p>
-                    </>
-                )
-            }
-            <p className='text-center text-xs mt-12'>© Derechos reservados 2024</p>
+            {open && (<Overlay setOpen={setOpen} />)}
         </div>
     )
 }

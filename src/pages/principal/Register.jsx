@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import Overlay from "./Overlay";
 
 const Register = ({ setState }) => {
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false);
     const [open, setOpen] = useState(false);
-    const [emailP, setEmailP] = useState("");
 
     const [data, setData] = useState({
         username: "",
@@ -45,34 +45,21 @@ const Register = ({ setState }) => {
                 <input type="text" name='username' className='input'
                     value={data.username} onChange={(e) => setData({ ...data, username: e.target.value })} />
             </div>
-            <button className='w-full mt-4 py-2 bg-third-custom hover:bg-third-custom/80' type='button' onClick={signup}>Registrarse</button>
+            <button className='w-full mt-4 py-2 back2 hover:bg-gray-900' type='button' onClick={signup}>Registrarse</button>
             <div className='text-center'>¿Ya tienes una cuenta? <b className='cursor-pointer' onClick={() => setState("login")}>inicia sesión.</b></div>
             <p className='text-secondary-custom'>{message}</p>
             {
                 loading && (
-                    <div className='flex flex-col justify-center items-center gap-3 text-secondary-custom'>
+                    <div className='flex flex-col justify-center items-center gap-3 text'>
                         <span class="icon-[eos-icons--loading] text-4xl"></span>
                         <b>Cargando</b>
                     </div>
                 )
             }
             <div className=''>
-                Si quieres registrarte como psicólogo, puedes enviar tu email <b className='text-secondary-custom cursor-pointer' onClick={() => setOpen(!open)}>aquí</b>.
+                Si quieres registrarte como psicólogo, puedes enviar tu email <b className='text cursor-pointer' onClick={() => setOpen(!open)}>aquí</b>.
             </div>
-            {
-                open && (
-                    <>
-
-                        <div>
-                            <input type="text" className='px-2 py-1 rounded-tl-lg rounded-bl-lg text-black/80 bg-white/90 focus:outline-none'
-                                value={emailP} onChange={(e) => setEmailP(e.target.value)} />
-                            <button type='button' className='bg-secondary-custom px-2 py-1 rounded-tr-lg rounded-br-lg hover:bg-secondary-custom/90'>Enviar registro</button>
-                        </div>
-                        <p className='underline text-xs'>Recibirás un correo con la información del registro de psicólogo, además de las instrucciones.</p>
-                    </>
-                )
-            }
-            <p className='text-center text-xs mt-12'>© Derechos reservados 2024</p>
+            {open && (<Overlay setOpen={setOpen} />)}
         </div>
     )
 }

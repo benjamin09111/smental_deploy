@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --font-family: Arial;
+  --font-family: "Fira Sans", Arial;
   --primary-color: #000105;
   --secondary-color: #020305e0;
   --third-color: #177cb6;
@@ -16,6 +16,10 @@ body {
   background: #dfdce3;
 }
 
+*{
+  font-family: var(--font-family);
+}
+
 .back {
   background: linear-gradient(var(--primary-color), var(--secondary-color));
 }
@@ -25,8 +29,18 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 99999;
-  background: rgba(0, 0, 0, 0.509);
+  z-index: 100;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.842);
+}
+
+.overlay {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  z-index: 999;
+  background: white;
 }
 
 .back2 {
