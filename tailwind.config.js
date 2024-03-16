@@ -9,10 +9,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        "primary-custom": "",
-        "secondary-custom": "#fc4a1a",
-        "third-custom": "#f7b733",
-        "fourth-custom": "#dfdce3",
+        "primary-custom": "#40C6E5",
+        "secondary-custom": "#9F99F5",
+        "third-custom": "#12151b",
+        "fourth-custom": "#2d3d45",
       },
 
     },

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import PrincipalPage from "./pages/principal/Principal";
 import Main from "./pages/main/Main";
 import Loading from "./Loading";
+import NavP from './components/nav_principal/NavbarP';
 
 function App() {
   //variable-funcion_modifica
@@ -23,7 +24,13 @@ function App() {
 
   return (
     <>
-      {logeado ? (<Main />) : (<PrincipalPage />)}
+      {logeado ? (<Main />) : (
+      <>
+      <NavP />
+      <PrincipalPage />
+      </>
+      
+      )}
       {loading && <Loading msg="Verificando sesión" />}
     </>
   )

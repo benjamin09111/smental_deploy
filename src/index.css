@@ -2,26 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+"IBM Plex Sans"
+"Noto Sans KR"
+"Barlow"
+"Maven Pro"
+*/
+
 :root {
-  --font-family: "Fira Sans", Arial;
-  --primary-color: #000105;
-  --secondary-color: #020305e0;
-  --third-color: #177cb6;
-  --fourth-color: #ba4dece5;
+  --font-family: "Barlow", Arial;
+  --primary-color: #40C6E5;
+  --secondary-color: #9F99F5;
+  --third-color: #12151b;
+  --fourth-color: #2d3d45;
 }
+
+/* colores css */
 
 /* estilos generales / que se repiten */
-
-body {
-  background: #dfdce3;
+.text-gradient {
+  background: #40C6E5;
+  background: linear-gradient(to top, #40C6E5 0%, #9F99F5 69%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-*{
+.bg-gradient-primary {
+  background: rgb(64, 198, 229);
+  background: linear-gradient(176deg, rgba(64, 198, 229, 1) 0%, rgba(159, 153, 245, 1) 100%);
+}
+
+.bg-gradient-secondary {
+  background: rgb(18, 21, 27);
+  background: linear-gradient(176deg, rgba(18, 21, 27, 1) 0%, rgba(45, 61, 69, 1) 100%);
+}
+
+* {
   font-family: var(--font-family);
-}
-
-.back {
-  background: linear-gradient(var(--primary-color), var(--secondary-color));
 }
 
 .bg_overlay {
@@ -52,9 +69,20 @@ body {
 }
 
 .input {
-  color: black;
+  color: rgb(244, 244, 244);
+  background: none;
+  border-bottom: 1px solid gray;
+  width: 80%;
 }
 
 .input:focus {
   outline: none;
+}
+
+.one {
+  flex: 1;
+}
+
+.two {
+  flex: 1;
 }
