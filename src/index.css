@@ -34,7 +34,7 @@
 
 .bg-gradient-secondary {
   background: rgb(18, 21, 27);
-  background: linear-gradient(176deg, rgba(18, 21, 27, 1) 0%, rgba(45, 61, 69, 1) 100%);
+  background: linear-gradient(176deg, rgba(18, 21, 27, 1) 0%, #2d3d45 100%);
 }
 
 * {
