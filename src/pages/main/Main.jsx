@@ -1,10 +1,12 @@
 import React from 'react'
-
+import Footer from '../../components/footer/Footer'
 
 const Main = () => {
     //todo el contenido de la app
     return (
-        <div>Main</div>
+        <div className="md:hidden">
+            <Footer />
+        </div>
     )
 }
 
