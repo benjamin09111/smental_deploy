@@ -4,7 +4,7 @@ const Navbar = () => {
     const [menu, setMenu] = useState(false);
     
     return (
-        <nav style={{height: "5vh", zIndex: "999999"}} className="bg-third-custom p-4 flex items-center justify-between fixed top-0 left-0 w-full">
+        <nav style={{height: "10vh", zIndex: "999999"}} className="bg-third-custom p-4 flex items-center justify-between fixed top-0 left-0 w-full">
             <div className="flex items-center space-x-2">
                 <span className="icon-[mdi--head-heart-outline] size-9 text-primary-custom "></span>
                 <span className="text-primary-custom font-semibold text-lg whitespace-nowrap">S-Mental</span>

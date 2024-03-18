@@ -12,7 +12,7 @@ const Main = () => {
             <div>
                 <Navbar state={state} setState={setState} ></Navbar>
             </div>
-            <main style={{paddingTop: "5vh"}} className='flex w-full'>
+            <main style={{paddingTop: "10vh"}} className='flex w-full'>
                 <Aside setState={setState}/>
                 <Content state={state} />
             </main>
