@@ -51,6 +51,10 @@
   background: rgba(0, 0, 0, 0.842);
 }
 
+.important {
+  z-index: 9999;
+}
+
 .overlay {
   top: 50%;
   left: 50%;
