@@ -10,7 +10,7 @@ import Mas from './Mas';
 const Content = ({ setState, state, tipo, setTipo }) => {
     return (
         <div className='flex flex-col relative w-full lg:px-64 px-6'>
-            <div className='flex pt-6 px-6 lg:px-64'>
+            <div className='flex pt-6 px-6 pb-16 lg:pb-6 lg:px-64'>
             {
                 state === "home" && (<Home />)
             }
