@@ -3,6 +3,7 @@ import Psicologo from "./crear/Psicologo";
 import Usuario from "./crear/Usuario";
 
 const Crear = ({tipo}) => {
+  
   const [publicacion, setPublicacion] = useState({
     titulo: "",
     descripcion: "",
@@ -11,7 +12,7 @@ const Crear = ({tipo}) => {
     imagen: ""
   });
 
-  const [hashtag, setHashtag] = useState("vacio");
+  const [hashtag, setHashtag] = useState("");
 
   const create = () => {
     //obtener la fecha
@@ -19,7 +20,7 @@ const Crear = ({tipo}) => {
 
     setPublicacion({
       ...publicacion,
-      fecha: `${today.getFullYear()}+${today.getMonth() + 1}+${today.getDate()}`,
+      fecha: `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`,
       autor_id: localStorage.getItem("user_id")
     });
 

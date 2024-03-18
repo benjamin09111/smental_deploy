@@ -37,7 +37,17 @@ const Psicologo = ({publicacion, setPublicacion, hashtag, setHashtag}) => {
         <HashtagInput hashtag={hashtag} setHashtag={setHashtag} />
       </div>
         <div>
-            <p>Agregar imagen del post</p>
+            <p>Agregar URL de la imagen del post</p>
+            <input
+          type="text"
+          name="imagen"
+          className="input"
+          placeholder="URL imagen"
+          value={publicacion.imagen}
+          onChange={(e) =>
+            setPublicacion({ ...publicacion, imagen: e.target.value })
+          }
+        />
         </div>
     </div>
   )

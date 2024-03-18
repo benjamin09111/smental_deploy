@@ -1,10 +1,10 @@
-import React from 'react'
 import Home from "./Home";
 import Publicaciones from "./Publicaciones";
 import Crear from "./Crear";
 import Buscar from "./Buscar";
 import ChatBot from "./ChatBot";
 import Terminos from './Terminos';
+import Posts from "./Posts";
 import Mas from './Mas';
 
 const Content = ({ setState, state, tipo, setTipo }) => {
@@ -25,6 +25,9 @@ const Content = ({ setState, state, tipo, setTipo }) => {
             }
             {
                 state === "chat" && (<ChatBot />)
+            }
+            {
+                state === "posts" && (<Posts />)
             }
             {
                 state === "terminos" && (<Terminos />)

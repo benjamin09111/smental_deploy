@@ -4,11 +4,10 @@ const Admin = () => {
     return (
         <div className='flex flex-col gap-3'>
             <b>Crear cuenta de psicólogo</b>
-            <b>Ver reportes de publicaciones y eliminarlas</b>
-            <b>Baneos / Reportes a cuentas</b>
-            <b>Reportes a comentarios</b>
-            <b>Ver todas las publicaciones</b>
-            <b>Ver psicólogos / eliminar cuentas</b>
+            <b>Reportes y gestión de comentarios</b>
+            <b>Reportes y gestión de cuentas</b>
+            <b>Reportes y gestión de publicaciones</b>
+            <b>Gestión de psicólogos</b>
         </div>
     )
 }

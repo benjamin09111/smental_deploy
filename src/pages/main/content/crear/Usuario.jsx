@@ -3,7 +3,7 @@ import HashtagInput from './HashtagInput'
 
 const Usuario = ({publicacion, setPublicacion, hashtag, setHashtag}) => {
   return (
-    <div>
+    <div className='flex flex-col gap-6'>
       <div className="text-4xl text-gradient font-bold">
         Desahógate o comparte tus experiencias
       </div>
@@ -41,13 +41,6 @@ const Usuario = ({publicacion, setPublicacion, hashtag, setHashtag}) => {
           En caso de querer publicar de manera anónima, es decir, sin nombre de usuario, ir a perfil y colocar modo anónimo.
         </b>
       </div>
-      <button
-        className="w-full bg-gradient-primary py-2"
-        type="button"
-        onClick={() => {}}
-      >
-        Crear publicación
-      </button>
     </div>
   )
 }
