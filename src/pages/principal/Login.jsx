@@ -27,7 +27,7 @@ const Login = ({ open, setOpen, setState }) => {
                 value={email} onChange={(e) => setEmail(e.target.value)} />
             </div>
             <div className='flex gap-10'>
-                <span class="icon-[mdi--password] text-2xl  bg-gradient-primary"></span>
+                <span class="icon-[mdi--password] text-2xl bg-gradient-primary"></span>
                 <input type="password" name='password' className='input' placeholder="Contraseña"
                     value={password} onChange={(e) => setPassword(e.target.value)} />
             </div>

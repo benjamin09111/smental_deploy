@@ -3,7 +3,7 @@ import { useState } from "react";
 const Navbar = () => {
     const [menu, setMenu] = useState(false);
     return (
-        <nav className=" bg-third-custom fixed w-full z-20 top-0 start-0 border-b">
+        <nav className=" bg-third-custom fixed w-full z-20 top-0 start-0">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="" className="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src="https://e7.pngegg.com/pngimages/228/99/png-clipart-mental-health-counselor-therapy-clinic-counseling-logo-psychology.png" className="h-8" alt="Flowbite Logo" />

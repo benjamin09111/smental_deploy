@@ -8,7 +8,7 @@ const Main = () => {
     //todo el contenido de la app
     const [state, setState] = useState("home");
     return (
-        <div className='flex flex-col'>
+        <div style={{minHeight: "100vh"}} className='flex flex-col bg-gradient-secondary text-white'>
             <div>
                 <Navbar state={state} setState={setState} ></Navbar>
             </div>
