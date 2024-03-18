@@ -18,7 +18,7 @@ const Navbar = () => {
                 <div className="flex items-center space-x-2 md:flex">
                     <img src="https://via.placeholder.com/40" alt="Foto de perfil" className="h-9 w-9 rounded-full border-2 border-gray-700" />
                     <div className="text-primary-custom font-medium">
-                        <span className="hidden md:inline-block">Usuario</span>
+                        <span className="hidden lg:inline-block">Usuario</span>
                     </div>
                 </div>
             </div>

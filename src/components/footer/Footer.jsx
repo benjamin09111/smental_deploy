@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = ({setState}) => {
   return (
 
-    <div class="fixed bottom-4 left-1/2 transform -translate-x-1/2 inline-flex mx-auto justify-between bg-third-custom w-11/12 rounded-3xl">
+    <div class="fixed bottom-0 left-1/2 transform -translate-x-1/2 inline-flex mx-auto justify-between bg-third-custom w-full ">
           <a
             aria-current="page"
             class="inline-flex flex-col items-center text-xs font-medium py-3 px-4 text-gradient flex-grow"
@@ -22,7 +22,7 @@ const Footer = ({setState}) => {
           </a>
           
           <button class="relative inline-flex flex-col items-center text-xs font-medium text-primary-custom py-3 px-6 flex-grow" onClick={()=>setState("crear")}>
-            <div class="absolute bottom-5 p-3 rounded-full border-4 border-transparent bg-third-custom">
+            <div class="absolute bottom-3 p-3 rounded-full border-4 border-transparent bg-third-custom">
             <span class="icon-[icons8--plus] text-3xl bg-gradient-primary cursor-pointer"></span>
             </div>
             <span class="sr-only">Add</span>
