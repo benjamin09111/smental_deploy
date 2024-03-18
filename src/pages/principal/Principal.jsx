@@ -10,7 +10,7 @@ const Principal = ({ open, setOpen, terminos, setTerminos }) => {
     //pagina que se ve al no estar logeado, get started
     return (
         <div style={{ minHeight: "100vh" }} className="bg-gradient-secondary flex flex-col justify-center items-center w-full">
-            <div className="flex flex-col lg:flex-row px-6 pt-6">
+            <div className="flex flex-col lg:flex-row px-6 pt-6 pb-6">
                 <div className="one">
                     <Animation duration={1}>
                         <div className="flex flex-col gap-4">
@@ -36,7 +36,7 @@ const Principal = ({ open, setOpen, terminos, setTerminos }) => {
 
             {terminos && (<Terminos setTerminos={setTerminos} />)}
 
-            <div className="absolute bottom-0 w-full hidden lg:block">
+            <div className="absolute bottom-0 w-full olas">
                 <div className="absolute bottom-0 w-full">
                     <Wave
                         fill="#40c7e57b"

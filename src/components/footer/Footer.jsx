@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Footer = ({setState}) => {
+const Footer = ({setState, tipo}) => {
   return (
 
     <div class="fixed bottom-0 left-1/2 transform -translate-x-1/2 inline-flex mx-auto justify-between bg-third-custom w-full ">
@@ -21,12 +21,16 @@ const Footer = ({setState}) => {
             <span class="sr-only">Publics</span>
           </a>
           
-          <button class="relative inline-flex flex-col items-center text-xs font-medium text-primary-custom py-3 px-6 flex-grow" onClick={()=>setState("crear")}>
+          {
+            tipo !== "usuario" && (
+              <button class="relative inline-flex flex-col items-center text-xs font-medium text-primary-custom py-3 px-6 flex-grow" onClick={()=>setState("crear")}>
             <div class="absolute bottom-3 p-3 rounded-full border-4 border-transparent bg-third-custom">
             <span class="icon-[icons8--plus] text-3xl bg-gradient-primary cursor-pointer"></span>
             </div>
             <span class="sr-only">Add</span>
           </button>
+            )
+          }
           <a
             class="inline-flex flex-col items-center text-xs font-medium text-primary-custom py-3 px-4 flex-grow"
             onClick={()=>setState("buscar")}
@@ -34,6 +38,19 @@ const Footer = ({setState}) => {
             <span class="icon-[mdi--search] text-3xl bg-gradient-primary cursor-pointer"></span>
             <span class="sr-only">Search</span>
           </a>
+
+          {
+            tipo === "usuario" && (
+              <a
+            class="inline-flex flex-col items-center text-xs font-medium text-primary-custom py-3 px-4 flex-grow"
+            onClick={()=>setState("crear")}
+          >
+            <span class="icon-[icons8--plus] text-3xl bg-gradient-primary cursor-pointer"></span>
+            <span class="sr-only">Crear</span>
+          </a>
+            )
+          }
+
           <a
             class="inline-flex flex-col items-center text-xs font-medium text-primary-custom py-3 px-4 flex-grow"
             onClick={()=>setState("chat")}

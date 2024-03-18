@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Navbar = () => {
+const Navbar = ({tipo}) => {
     const [menu, setMenu] = useState(false);
     
     return (
@@ -8,6 +8,7 @@ const Navbar = () => {
             <div className="flex items-center space-x-2">
                 <span className="icon-[mdi--head-heart-outline] size-9 text-primary-custom "></span>
                 <span className="text-primary-custom font-semibold text-lg whitespace-nowrap">S-Mental</span>
+                <div className="text-2xl text-gradient">{tipo === "psicologo" ? "Perfil: PSICÓLOGÍA" : (tipo === "admin" ? "Perfil: ADMIN" : "")}</div>
             </div>
             
             <div className="flex items-center justify-end space-x-4">

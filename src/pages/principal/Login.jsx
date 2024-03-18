@@ -12,7 +12,8 @@ const Login = ({ open, setOpen, setState }) => {
     const [loading, setLoading] = useState("");
 
     const signin = () => {
-
+        //guardar en el local una variable "type" de : psicologo, usuario, admin
+        //verificar si la cantidad de reportes es mayor a X, así no se permite entrar
     }
 
     return (

@@ -89,3 +89,9 @@
 .two {
   flex: 1;
 }
+
+@media screen and (max-height: 650px) {
+  .olas {
+    display: none;
+  }
+}
