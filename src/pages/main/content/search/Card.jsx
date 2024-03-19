@@ -1,11 +1,12 @@
 import img from "/user.webp";
 
-const Card = ({ nombre, apellido1, apellido2, edad, universidad, ubicacion, descripcion, sexo, numero, email, publicaciones, imagen }) => {
+const Card = ({ seguidores, nombre, apellido1, apellido2, edad, universidad, ubicacion, descripcion, sexo, numero, email, publicaciones, imagen }) => {
     return (
         <div className='flex flex-col lg:w-[20rem]'>
             <div className="bg-gray-900 p-2 rounded-tl rounded-tr">
                 <h1 className='text-xl font-bold'>{nombre} {apellido1} {apellido2}</h1>
                 <p className='text-lg text-gray-100'>{edad} años</p>
+                <div><b>Seguidores</b>: {seguidores}</div>
             </div>
             <img src={imagen == "" ? img : img} alt="user" className="w-full" />
             <div className="p-2 bg-gray-900">

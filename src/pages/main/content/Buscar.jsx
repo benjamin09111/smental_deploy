@@ -29,6 +29,7 @@ const Buscar = () => {
         publicaciones={psicologo.publicaciones}
         email={psicologo.email}
         numero={psicologo.numero}
+        seguidores={psicologo.seguidores}
         />
       ))
     }

@@ -1,5 +1,6 @@
 const psicologos = [
     {
+      "id": 1,
       "nombre": "María",
       "apellido1": "González",
       "apellido2": "López",
@@ -11,7 +12,8 @@ const psicologos = [
       "publicaciones": 5,
       "email": "mariagonzalez@example.com",
       "numero": "+34 123 456 789",
-      "imagen": ""
+      "imagen": "",
+      "seguidores": 44
     },
     {
       "nombre": "Juan",
@@ -25,7 +27,8 @@ const psicologos = [
       "publicaciones": 3,
       "email": "juanmartinez@example.com",
       "numero": "+34 987 654 321",
-      "imagen": ""
+      "imagen": "",
+      "seguidores": 44
     },
     {
       "nombre": "Ana",
@@ -39,7 +42,8 @@ const psicologos = [
       "publicaciones": 2,
       "email": "analopez@example.com",
       "numero": "+34 555 123 456",
-      "imagen": ""
+      "imagen": "",
+      "seguidores": 44
     },
     {
       "nombre": "David",
@@ -53,7 +57,8 @@ const psicologos = [
       "publicaciones": 4,
       "email": "davidsanchez@example.com",
       "numero": "+34 111 222 333",
-      "imagen": ""
+      "imagen": "",
+      "seguidores": 44
     },
     {
       "nombre": "Elena",
@@ -67,7 +72,8 @@ const psicologos = [
       "publicaciones": 1,
       "email": "elenaruiz@example.com",
       "numero": "+34 777 888 999",
-      "imagen": ""
+      "imagen": "",
+      "seguidores": 44
     },
     {
       "nombre": "Pedro",
@@ -81,7 +87,8 @@ const psicologos = [
       "publicaciones": 0,
       "email": "pedrofernandez@example.com",
       "numero": "+34 333 444 555",
-      "imagen": ""
+      "imagen": "",
+      "seguidores": 44
     },
     {
       "nombre": "Laura",
@@ -95,7 +102,8 @@ const psicologos = [
       "publicaciones": 0,
       "email": "lauradiaz@example.com",
       "numero": "+34 999 000 111",
-      "imagen": ""
+      "imagen": "",
+      "seguidores": 44
     }
 ]  
 
