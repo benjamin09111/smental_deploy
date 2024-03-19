@@ -46,7 +46,7 @@ const Navbar = ({ tipo }) => {
             </div>
             
             <div className="flex items-center space-x-2">
-                <button onClick={toggleUserPopup} className="focus:outline-none flex items-center">
+                <button onClick={toggleUserPopup} className="focus:outline-none flex items-center gap-1">
                     <img src="https://via.placeholder.com/40" alt="Foto de perfil" className="h-9 w-9 rounded-full border-2 border-gray-700" />
                     <div className="text-primary-custom font-medium">
                         <span className="hidden lg:inline-block">Usuario</span>
