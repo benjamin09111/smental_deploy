@@ -8,7 +8,7 @@ import NavbarHome from '../../components/nav_home/NavbarHome';
 
 const Main = () => {
     const [state, setState] = useState("home");
-    const [tipo, setTipo] = useState("psicologo");
+    const [tipo, setTipo] = useState("usuario");
     const [searchMode, setSearchMode] = useState(false);
 
     useEffect(() => {
