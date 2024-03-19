@@ -45,14 +45,17 @@ const Navbar = ({ tipo }) => {
             <div className="flex items-center space-x-2">
                 <span className="icon-[mdi--head-heart-outline] size-9 text-primary-custom "></span>
                 <span className="text-primary-custom font-semibold text-lg whitespace-nowrap">S-Mental</span>
-                <div className="text-2xl text-gradient">{tipo === "psicologo" ? "Perfil: PSICÓLOGÍA" : (tipo === "admin" ? "Perfil: ADMIN" : "")}</div>
             </div>
             
             <div className="flex items-center space-x-2">
                 <button onClick={toggleUserPopup} className="focus:outline-none flex items-center gap-1">
                     <img src="https://via.placeholder.com/40" alt="Foto de perfil" className="h-9 w-9 rounded-full border-2 border-gray-700" />
                     <div className="text-primary-custom font-medium">
-                        <span className="hidden lg:inline-block">Usuario</span>
+                        <span className="hidden lg:inline-block">
+                            {
+                                tipo === "usuario" ? "Usuario" : (tipo ==="psicologo" ? "Psicólogo" : "Admin") 
+                            }
+                        </span>
                     </div>
                 </button>
             </div>

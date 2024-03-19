@@ -4,6 +4,10 @@ import publicaciones from "../../../json/publications";
 const Publicaciones = ({ tipo }) => {
   return (
     <div className='flex flex-col lg:px-10 lg:py-6 w-full'>
+      <div>
+        <h1 className='text-lg text-gray-400'>Conoce y comparte las experiencias usuarios</h1>
+        <input type="text" className='input' placeholder='Buscar por temática...' />
+      </div>
       {publicaciones.map((publicacion, index) => (
         <div key={index} className='flex flex-col px-3 pb-6 contenedor_publicacion'>
 
