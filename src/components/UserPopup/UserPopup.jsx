@@ -3,7 +3,7 @@ import React from 'react';
 const UserPopup = () => {
   return (
     <div className="mx-auto w-60">
-      <div className="bg-white rounded overflow-hidden shadow-lg">
+      <div className="bg-white rounded-md overflow-hidden shadow-lg">
         <div className="text-center p-6 bg-third-custom">
           <svg
             aria-hidden="true"
