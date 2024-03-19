@@ -17,6 +17,9 @@ const Navbar = ({ tipo }) => {
             const visible = prevScrollPos > currentScrollPos || currentScrollPos < 100;
             setVisible(visible);
             setPrevScrollPos(currentScrollPos);
+            if (!visible) {
+                setShowUserPopup(false);
+            }
         };
 
         window.addEventListener("scroll", handleScroll);
