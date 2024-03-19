@@ -3,7 +3,7 @@ import publicaciones from "../../../json/publications";
 
 const Publicaciones = ({ tipo }) => {
   return (
-    <div className='flex flex-col lg:px-96 lg:py-6 w-full'>
+    <div className='flex flex-col lg:px-10 lg:py-6 w-full'>
       {publicaciones.map((publicacion, index) => (
         <div key={index} className='flex flex-col px-3 pb-6 contenedor_publicacion'>
 
