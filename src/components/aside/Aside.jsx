@@ -22,9 +22,9 @@ const Aside = ({ setState, tipo }) => {
                 }
                 {
                     tipo !== "psicologo" && (
-                        <a className='flex items-center gap-6 cursor-pointer pl-4 py-2 hover:bg-gray-950' onClick={() => setState("publicaciones")}>
+                        <a className='flex items-center gap-6 cursor-pointer pl-4 py-2 hover:bg-gray-950' onClick={() => setState("posts")}>
                     <span class="icon-[gridicons--pages] text-2xl bg-gradient-primary"></span>
-                    <b className='text-gray-500 font-semibold'>Publicaciones</b>
+                    <b className='text-gray-500 font-semibold'>Posts</b>
                 </a>
                     )
                 }

@@ -18,7 +18,7 @@ const Navbar = ({ tipo }) => {
     }, [prevScrollPos]);
 
     return (
-        <nav style={{ height: "10vh", zIndex: "999999", transition: "top 0.3s" }} className={`bg-third-custom p-4 flex items-center justify-between fixed ${visible ? "top-0" : "-top-[92px]"} lg:top-0 left-0 w-full`}>
+        <nav style={{ height: "10vh", zIndex: "999999", transition: "top 0.3s" }} className={`bg-gray-900 p-4 flex items-center justify-between fixed ${visible ? "top-0" : "-top-[92px]"} lg:top-0 left-0 w-full`}>
             <div className="flex items-center space-x-2">
                 <span className="icon-[mdi--head-heart-outline] size-9 text-primary-custom "></span>
                 <span className="text-primary-custom font-semibold text-lg whitespace-nowrap">S-Mental</span>

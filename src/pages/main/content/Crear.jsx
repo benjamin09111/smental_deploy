@@ -29,7 +29,7 @@ const Crear = ({tipo}) => {
   };
 
   return (
-    <div className="flex flex-col gap-10 pb-6">
+    <div className="flex flex-col gap-10 pb-6 lg:px-64 px-6 pt-6">
       {
         tipo == "psicologo" && (
           <Psicologo hashtag={hashtag} setHashtag={setHashtag} publicacion={publicacion} setPublicacion={setPublicacion} />
@@ -42,7 +42,7 @@ const Crear = ({tipo}) => {
       }
 
       <button
-        className="w-full bg-gradient-primary py-2"
+        className="lg:w-1/2 bg-gradient-primary py-2"
         type="button"
         onClick={create}
       >

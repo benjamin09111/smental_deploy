@@ -43,10 +43,11 @@ const HashtagInput = ({ hashtag, setHashtag }) => {
         onChange={handleInputChange}
         placeholder="Ingrese una sola temática"
       />
-      <p className='underline mt-4 mb-2'>Temáticas sugeridas</p>
       {
         (hashtag !== "" && !close) && (
-          <ul className='bg-gray-600 rounded h-32 overflow-y-auto'>
+          <>
+          <p className='underline mt-4 mb-2'>Temáticas sugeridas</p>
+          <ul className='bg-gray-900 text-gray-300 rounded h-32 overflow-y-auto'>
             {suggestedHashtags.length > 0 ? (
               suggestedHashtags.map((hashtag, index) => (
                 <li
@@ -61,6 +62,7 @@ const HashtagInput = ({ hashtag, setHashtag }) => {
               <li className='pl-4 py-1 text-gray-300'>No hay sugerencias</li>
             )}
           </ul>
+          </>
         )
       }
     </div>

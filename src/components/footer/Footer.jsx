@@ -14,7 +14,7 @@ const Footer = ({ setState, tipo, setSearchMode }) => {
 
       <a
         className="inline-flex flex-col items-center text-xs font-medium text-primary-custom py-3 px-4 flex-grow"
-        onClick={() => setState("publicaciones")}
+        onClick={() => setState("posts")}
       >
         <span className="icon-[gridicons--pages] text-3xl bg-gradient-primary cursor-pointer"></span>
         <span className="sr-only">Publics</span>

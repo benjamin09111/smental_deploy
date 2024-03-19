@@ -9,13 +9,12 @@ import Mas from './Mas';
 
 const Content = ({ setState, state, tipo, setTipo }) => {
     return (
-        <div className='flex flex-col relative w-full lg:px-64 px-6'>
-            <div className='flex pt-6 px-6 pb-[68px] lg:pb-6 lg:px-64'>
+        <div style={{minHeight: "100vh"}} className='flex lg:pl-64 flex-col relative w-full bg-gray-950 pb-24'>
             {
-                state === "home" && (<Home />)
+                state === "home" && (<Publicaciones tipo={tipo} />)
             }
             {
-                state === "publicaciones" && (<Publicaciones tipo={tipo} />)
+                state === "posts" && (<Posts />)
             }
             {
                 state === "crear" && (<Crear tipo={tipo} />)
@@ -27,15 +26,11 @@ const Content = ({ setState, state, tipo, setTipo }) => {
                 state === "chat" && (<ChatBot />)
             }
             {
-                state === "posts" && (<Posts />)
-            }
-            {
                 state === "terminos" && (<Terminos />)
             }
             {
                 state === "mas" && (<Mas tipo={tipo} setTipo={setTipo} />)
             }
-            </div>
         </div>
     )
 }

@@ -90,6 +90,19 @@
   flex: 1;
 }
 
+.contenedor_publicacion {
+  border-top: 1px solid gray;
+}
+
+.input_coment {
+  background: transparent;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.input_coment:focus {
+  outline: none;
+}
+
 @media screen and (max-height: 650px) {
   .olas {
     display: none;
