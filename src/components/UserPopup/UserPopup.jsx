@@ -38,7 +38,7 @@ const UserPopup = () => {
         </div>
 
         <div className="">
-          <button href="#" className="w-full px-4 py-2 pb-4 hover:bg-gray-100 flex">
+          <button href="#" className="w-full px-4 py-[11px] hover:bg-gray-100 flex">
             <p className="text-sm font-medium text-gray-800 leading-none">Cerrar sesión</p>
           </button>
         </div>
