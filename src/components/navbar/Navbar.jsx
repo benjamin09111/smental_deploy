@@ -26,10 +26,6 @@ const Navbar = ({ tipo }) => {
             </div>
             
             <div className="flex items-center justify-end space-x-4">
-                <button className="bg-gray-700 text-primary-custom px-1 py-1 rounded-md hover:bg-gray-600 flex items-center">
-                    <span className="icon-[solar--settings-linear] size-7"></span>
-                </button>
-
                 <div className="flex items-center space-x-2 md:flex">
                     <img src="https://via.placeholder.com/40" alt="Foto de perfil" className="h-9 w-9 rounded-full border-2 border-gray-700" />
                     <div className="text-primary-custom font-medium">

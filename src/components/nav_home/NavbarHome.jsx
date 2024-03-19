@@ -29,10 +29,6 @@ const NavbarHome = ({ tipo }) => {
 
             <input type="text" placeholder="Buscar..." className="min-h-9 w-1/3 px-2 py-1 rounded bg-gray-700 text-primary-custom focus:outline-none" />
 
-                <button className="bg-gray-700 text-primary-custom px-1 py-1 rounded-md hover:bg-gray-600 flex items-center">
-                    <span className="icon-[solar--settings-linear] size-7"></span>
-                </button>
-
                 <div className="flex items-center space-x-2 md:flex">
                     <img src="https://via.placeholder.com/40" alt="Foto de perfil" className="h-9 w-9 rounded-full border-2 border-gray-700" />
                     <div className="text-primary-custom font-medium">
