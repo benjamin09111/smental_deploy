@@ -6,10 +6,10 @@ const HashtagInput = ({ hashtag, setHashtag }) => {
   const [close, setClose] = useState(false);
 
   useEffect(() => {
-    if (close && hashtag != "") {
+    if (close && hashtag == "") {
       setClose(false);
     }
-  }, [hashtag])
+  }, [hashtag, close]);
 
   useEffect(() => {
     // Simular una llamada a la API para obtener los hashtags existentes
@@ -17,19 +17,21 @@ const HashtagInput = ({ hashtag, setHashtag }) => {
   }, []);
 
   const handleInputChange = (event) => {
-    setHashtag(event.target.value);
+    const inputValue = event.target.value;
+    setHashtag(inputValue);
 
     // Filtrar los hashtags existentes que coincidan con la entrada del usuario
-    const filteredHashtags = alreadyHashtags.filter(tag => tag.includes(value));
+    const filteredHashtags = alreadyHashtags.filter(tag => tag.includes(inputValue));
     setSuggestedHashtags(filteredHashtags);
   };
 
   const handleHashtagSelect = (hashtag) => {
     setHashtag(hashtag);
+    setClose(true);
   };
 
   const handleAddHashtag = () => {
-
+    // Aquí puedes agregar lógica para añadir el hashtag seleccionado a alguna lista, por ejemplo.
   };
 
   return (
@@ -50,10 +52,7 @@ const HashtagInput = ({ hashtag, setHashtag }) => {
                 <li
                   className='cursor-pointer hover:bg-gray-700 pl-4 py-1'
                   key={index}
-                  onClick={() => {
-                    handleHashtagSelect(hashtag);
-                    setClose(true);
-                  }}
+                  onClick={() => handleHashtagSelect(hashtag)}
                 >
                   {hashtag}
                 </li>

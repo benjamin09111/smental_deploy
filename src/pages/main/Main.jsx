@@ -7,7 +7,7 @@ import Content from "../main/content/Content";
 const Main = () => {
     //todo el contenido de la app
     const [state, setState] = useState("home");
-    const [tipo, setTipo] = useState("psicologo");
+    const [tipo, setTipo] = useState("usuario");
 
     useEffect(()=> {
         //llamada para saber el tipo, hay que crifrar
