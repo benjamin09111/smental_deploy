@@ -7,10 +7,11 @@ const psicologos = [
       "universidad": "Universidad Nacional",
       "ubicacion": "Madrid, España",
       "sexo": "Femenino",
-      "descripcion": "Estudiante de ingeniería informática apasionada por la programación y la inteligencia artificial.",
+      "descripcion": "Estudiante de ingeniería informática apasionada por la programación y la inteligencia artificial. Ma texto texto texto texto texto texto texto texteo texto.",
       "publicaciones": 5,
       "email": "mariagonzalez@example.com",
-      "numero": "+34 123 456 789"
+      "numero": "+34 123 456 789",
+      "imagen": ""
     },
     {
       "nombre": "Juan",
@@ -23,7 +24,8 @@ const psicologos = [
       "descripcion": "Estudiante de medicina interesado en la investigación científica y la salud pública.",
       "publicaciones": 3,
       "email": "juanmartinez@example.com",
-      "numero": "+34 987 654 321"
+      "numero": "+34 987 654 321",
+      "imagen": ""
     },
     {
       "nombre": "Ana",
@@ -36,7 +38,8 @@ const psicologos = [
       "descripcion": "Apasionada por el arte y la literatura. Estudiante de filosofía en busca de nuevos horizontes.",
       "publicaciones": 2,
       "email": "analopez@example.com",
-      "numero": "+34 555 123 456"
+      "numero": "+34 555 123 456",
+      "imagen": ""
     },
     {
       "nombre": "David",
@@ -49,7 +52,8 @@ const psicologos = [
       "descripcion": "Estudiante de economía con interés en el emprendimiento y la innovación tecnológica.",
       "publicaciones": 4,
       "email": "davidsanchez@example.com",
-      "numero": "+34 111 222 333"
+      "numero": "+34 111 222 333",
+      "imagen": ""
     },
     {
       "nombre": "Elena",
@@ -62,7 +66,8 @@ const psicologos = [
       "descripcion": "Estudiante de psicología interesada en la salud mental y el bienestar emocional.",
       "publicaciones": 1,
       "email": "elenaruiz@example.com",
-      "numero": "+34 777 888 999"
+      "numero": "+34 777 888 999",
+      "imagen": ""
     },
     {
       "nombre": "Pedro",
@@ -75,7 +80,8 @@ const psicologos = [
       "descripcion": "Estudiante de arquitectura apasionado por el diseño sostenible y la innovación urbana.",
       "publicaciones": 0,
       "email": "pedrofernandez@example.com",
-      "numero": "+34 333 444 555"
+      "numero": "+34 333 444 555",
+      "imagen": ""
     },
     {
       "nombre": "Laura",
@@ -88,8 +94,9 @@ const psicologos = [
       "descripcion": "Estudiante de biología interesada en la conservación del medio ambiente y la biodiversidad.",
       "publicaciones": 0,
       "email": "lauradiaz@example.com",
-      "numero": "+34 999 000 111"
+      "numero": "+34 999 000 111",
+      "imagen": ""
     }
 ]  
 
-export default publicaciones;
+export default psicologos;

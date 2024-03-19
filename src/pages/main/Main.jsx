@@ -29,11 +29,11 @@ const Main = () => {
                 {searchMode ? <NavbarHome tipo={tipo} /> : <Navbar tipo={tipo} state={state} setState={handleStateChange} />}
             </div>
             <main style={{ paddingTop: "10vh" }} className='flex w-full'>
-                <Aside tipo={tipo} setState={handleStateChange} />
+                <Aside state={state} tipo={tipo} setState={handleStateChange} />
                 <Content tipo={tipo} setTipo={setTipo} state={state} />
             </main>
             <div className="lg:hidden">
-                <Footer tipo={tipo} setState={handleStateChange} />
+                <Footer state={state} tipo={tipo} setState={handleStateChange} />
             </div>
         </div>
     )

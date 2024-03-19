@@ -3,11 +3,18 @@ import Card from "./search/Card";
 
 const Buscar = () => {
   return (
-    <div className="flex flex-col gap-4">
-      <h1>Encuentra de forma rápida psicólogos profesionales y confiables según tus preferencias.</h1>
-      <div>
-        FILTRAR
+    <div className="flex px-6 lg:px-0 flex-col gap-4 lg:px-16">
+      <h1 className="text-3xl text-gradient font-bold mt-6">Encuentra de forma rápida psicólogos profesionales y confiables según tus preferencias.</h1>
+      <div className="flex flex-col">
+        <p className="text-gray-300 text-lg">Búsqueda filtrada</p>
+        <div className="flex gap-3 flex-wrap">
+        <b>Sexo</b>
+        <b>Universidad</b>
+        <b>Ubicación</b>
+        <b>Nombre</b>
+        </div>
       </div>
+    <div className="flex flex-wrap gap-3">
     {
       psicologos.map((psicologo)=> (
         <Card
@@ -25,6 +32,7 @@ const Buscar = () => {
         />
       ))
     }
+    </div>
 
     </div>
   )
