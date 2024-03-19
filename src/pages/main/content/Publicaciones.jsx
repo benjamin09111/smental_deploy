@@ -15,7 +15,7 @@ const Publicaciones = ({ tipo }) => {
               </div>
             </div>
             <div>
-              <span className="icon-[material-symbols--report] text-xl text-red-400 cursor-pointer hover:text-red-500"></span>
+              <span className="icon-[material-symbols--report] text-xl text-red-300 cursor-pointer hover:text-red-600"></span>
             </div>
           </div>
 
