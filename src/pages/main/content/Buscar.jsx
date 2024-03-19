@@ -2,7 +2,7 @@ import React from 'react'
 
 const Buscar = () => {
   return (
-    <div>Buscar</div>
+    <div>Buscar psicólogos</div>
   )
 }
 
