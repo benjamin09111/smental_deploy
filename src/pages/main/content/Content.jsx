@@ -5,7 +5,6 @@ import Buscar from "./Buscar";
 import ChatBot from "./ChatBot";
 import Terminos from './Terminos';
 import Posts from "./Posts";
-import Mas from './Mas';
 
 const Content = ({ setState, state, tipo, setTipo }) => {
     return (
@@ -30,9 +29,6 @@ const Content = ({ setState, state, tipo, setTipo }) => {
             }
             {
                 state === "perfil" && (<Perfil tipo={tipo} />)
-            }
-            {
-                state === "mas" && (<Mas tipo={tipo} setTipo={setTipo} />)
             }
         </div>
     )

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Psicologo from "./Psicologo";
 import Usuario from "./Usuario";
+import Admin from "./Admin"
 
 const usuario = {
     "id": 1,
@@ -35,7 +36,7 @@ const Perfil = ({ tipo }) => {
     //const [psicologo, setPsicologo] = useState({});
     //const [usuario, setUsuario] = useState({});
     return (
-        <div>
+        <div className='flex flex-col pl-12 pt-6'>
             <h1 className='text-3xl text-gradient font-bold'>Perfil</h1>
             <p>Información de la cuenta</p>
             {
@@ -66,6 +67,9 @@ const Perfil = ({ tipo }) => {
                     psicologos_seguidos={usuario.psicologos_seguidos}
                     numero={usuario.numero}
                 />
+            }
+            {
+                tipo === "admin" && <Admin />
             }
         </div>
     )

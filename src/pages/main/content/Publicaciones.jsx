@@ -49,9 +49,9 @@ const Publicaciones = ({ tipo }) => {
           }
 
           {tipo === "admin" && (
-            <button type='button' className='px-3 py-1 mt-2 text-sm text-white bg-red-400 hover:bg-red-500 rounded cursor-pointer absolute top-0 right-0'>
-              Obtener información de usuario
-            </button>
+            <button type='button' className='px-3 py-1 mt-2text-white bg-red-400 hover:bg-red-500 rounded cursor-pointer lg:w-1/3'>
+            Obtener información de usuario
+          </button>
           )}
         </div>
       ))}
