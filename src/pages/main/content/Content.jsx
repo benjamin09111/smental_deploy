@@ -1,4 +1,4 @@
-import Home from "./Home";
+import Perfil from "./perfil/Perfil";
 import Publicaciones from "./Publicaciones";
 import Crear from "./Crear";
 import Buscar from "./Buscar";
@@ -27,6 +27,9 @@ const Content = ({ setState, state, tipo, setTipo }) => {
             }
             {
                 state === "terminos" && (<Terminos />)
+            }
+            {
+                state === "perfil" && (<Perfil tipo={tipo} />)
             }
             {
                 state === "mas" && (<Mas tipo={tipo} setTipo={setTipo} />)

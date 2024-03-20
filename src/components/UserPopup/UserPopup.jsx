@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserPopup = () => {
+const UserPopup = ({setState}) => {
   return (
     <div className="mx-auto w-60">
       <div className="bg-white rounded-md overflow-hidden shadow-lg">
@@ -22,7 +22,7 @@ const UserPopup = () => {
           <p className="pt-2 text-lg font-semibold text-gray-50">John Doe</p>
           <p className="text-sm text-gray-100">John@Doe.com</p>
           <div className="mt-5">
-            <button className="border rounded-full py-2 px-4 text-xs font-semibold text-gray-100 hover:bg-gray-800">
+            <button onClick={()=>setState("perfil")} className="border rounded-full py-2 px-4 text-xs font-semibold text-gray-100 hover:bg-gray-800">
               Ver perfil
             </button>
           </div>

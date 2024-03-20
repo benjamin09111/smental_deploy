@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import UserPopup from '../UserPopup/UserPopup';
 
-const Navbar = ({ tipo }) => {
+const Navbar = ({ tipo, setState }) => {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
     const [showUserPopup, setShowUserPopup] = useState(false);
@@ -62,7 +62,7 @@ const Navbar = ({ tipo }) => {
 
             {showUserPopup && (
                 <div ref={popupRef} className="absolute top-0 right-0 rounded-lg shadow-lg p-4">
-                    <UserPopup />
+                    <UserPopup setState={setState} />
                 </div>
             )}
         </nav>

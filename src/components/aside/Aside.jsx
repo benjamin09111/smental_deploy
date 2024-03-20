@@ -64,7 +64,7 @@ const Aside = ({ state, setState, tipo }) => {
                 }
                 {
                     tipo !== "psicologo" && (
-                        <a className='flex items-center gap-6 cursor-pointer pl-4 py-2 hover:bg-gray-950' onClick={() => setState("mas")}>
+                        <a className='flex items-center gap-6 cursor-pointer pl-4 py-2 hover:bg-gray-950' onClick={() => setState("perfil")}>
                             <span className="icon-[material-symbols--menu] text-2xl bg-gradient-primary"></span>
                             <b className='text-gray-500 font-semibold'>{tipo == "admin" ? "Panel" : "Perfil"}</b>
                         </a>
