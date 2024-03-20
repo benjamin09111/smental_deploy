@@ -2,9 +2,12 @@ import img from "/user.webp";
 
 const Card = ({ seguidores, nombre, apellido1, apellido2, edad, universidad, ubicacion, descripcion, sexo, numero, email, publicaciones, imagen }) => {
     return (
-        <div className='flex flex-col lg:w-[20rem]'>
+        <div className='flex flex-col lg:w-[25rem] shadow'>
             <div className="bg-gray-900 p-2 rounded-tl rounded-tr">
-                <h1 className='text-xl font-bold'>{nombre} {apellido1} {apellido2}</h1>
+                <div className="flex items-center justify-between">
+                <h1 className='text-2xl font-bold'>{nombre} {apellido1} {apellido2}</h1>
+                <b className="text-secondary-custom cursor-pointer text-lg">Seguir</b>
+                </div>
                 <p className='text-lg text-gray-100'>{edad} años</p>
                 <div><b>Seguidores</b>: {seguidores}</div>
             </div>
