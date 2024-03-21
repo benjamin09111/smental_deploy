@@ -2,7 +2,7 @@ import React from 'react'
 
 const Terminos = () => {
   return (
-    <div className='rounded-lg flex flex-col gap-10 text-white m-4 p-4 lg:w-1/2'>
+    <div className='rounded-lg flex flex-col gap-10 text-white m-4 pt-6 pl-12 lg:px-12 lg:w-1/2'>
     <h1 className="text-gradient text-3xl font-bold">Términos y Condiciones de Uso</h1>
     <p>Por favor, lee atentamente los siguientes términos y condiciones antes de utilizar nuestra aplicación de red social de salud mental. Al acceder y utilizar esta aplicación, aceptas cumplir con estos términos y condiciones. Si no estás de acuerdo con alguno de estos términos, por favor, abstente de utilizar la aplicación.</p>
 

@@ -3,7 +3,8 @@ import Card from "./search/Card";
 
 const Buscar = () => {
   return (
-    <div className="flex px-6 flex-col gap-4 lg:px-16">
+    <div className="flex items-start w-full">
+      <section className='flex flex-col lg:pl-12 w-2/3 pt-6'>
       <h1 className="text-3xl text-gradient font-bold mt-6">Encuentra de forma rápida psicólogos profesionales y confiables según tus preferencias.</h1>
       <div className="flex flex-col">
         <p className="text-gray-300 text-lg">Búsqueda filtrada</p>
@@ -34,6 +35,16 @@ const Buscar = () => {
       ))
     }
     </div>
+      </section>
+      <section className='w-1/3 py-6 lg:px-24 shadow hidden lg:block'>
+      <div className='py-3 px-6 rounded bg-gray-900 flex flex-col gap-2'>
+          <h2 className='text-2xl'>Temáticas más buscadas en las publicaciones de usuarios</h2>
+          <b>#Soledad</b>
+          <b>#Depresión</b>
+          <b>#Tristeza</b>
+          <b>#Esperanza</b>
+        </div>
+      </section>
 
     </div>
   )

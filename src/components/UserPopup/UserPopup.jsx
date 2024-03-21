@@ -1,5 +1,3 @@
-import React from 'react';
-
 const UserPopup = ({setState}) => {
   return (
     <div className="mx-auto w-60">
@@ -26,6 +24,13 @@ const UserPopup = ({setState}) => {
               Ver perfil
             </button>
           </div>
+        </div>
+
+        <div className="">
+          <button href="#" className="px-4 py-2 hover:bg-gray-100 flex w-full items-center">
+          <span class="icon-[mdi--incognito] size-5 text-gray-800"></span>
+            <p className="text-sm font-medium text-gray-800 leading-none">Activar modo anónimo</p>
+          </button>
         </div>
 
         <div className="border-b">

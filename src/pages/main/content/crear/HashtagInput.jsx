@@ -36,13 +36,16 @@ const HashtagInput = ({ hashtag, setHashtag }) => {
 
   return (
     <div>
+      <div className="flex gap-10">
+      <span class="icon-[icon-park-solid--topic] text-2xl bg-gradient-primary"></span>
       <input
-        className='input'
+        className='input lg:w-1/3'
         type="text"
         value={hashtag}
         onChange={handleInputChange}
         placeholder="Ingrese una sola temática"
       />
+      </div>
       {
         (hashtag !== "" && !close) && (
           <>

@@ -4,7 +4,7 @@ import HashtagInput from './HashtagInput'
 const Usuario = ({publicacion, setPublicacion, hashtag, setHashtag}) => {
   return (
     <div className='flex flex-col gap-6'>
-      <div className="text-4xl text-gradient font-bold">
+      <div className="text-3xl text-gradient font-bold">
         Desahógate o comparte tus experiencias
       </div>
       <div className="flex gap-10">
@@ -12,7 +12,7 @@ const Usuario = ({publicacion, setPublicacion, hashtag, setHashtag}) => {
         <input
           type="text"
           name="titulo"
-          className="input"
+          className="input lg:w-1/3"
           placeholder="Título"
           value={publicacion.titulo}
           onChange={(e) =>
@@ -25,7 +25,7 @@ const Usuario = ({publicacion, setPublicacion, hashtag, setHashtag}) => {
         <textarea
           type="text"
           name="descripcion"
-          className="input resize-none h-16"
+          className="input lg:w-1/3 resize-none h-16"
           placeholder="Descripción"
           value={publicacion.descripcion}
           onChange={(e) =>
@@ -36,7 +36,7 @@ const Usuario = ({publicacion, setPublicacion, hashtag, setHashtag}) => {
       <div  className='mt-12'>
         <HashtagInput hashtag={hashtag} setHashtag={setHashtag} />
       </div>
-      <div className="flex gap-5">
+      <div className="flex my-6 gap-5 lg:w-1/2">
         <b>
           En caso de querer publicar de manera anónima, es decir, sin nombre de usuario, ir a perfil y colocar modo anónimo.
         </b>

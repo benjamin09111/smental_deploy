@@ -29,7 +29,8 @@ const Crear = ({tipo}) => {
   };
 
   return (
-    <div className="flex flex-col gap-10 pb-6 lg:px-64 px-6 pt-6">
+    <div className="flex items-start w-full">
+      <section className='flex flex-col pl-12 w-2/3 pt-6'>
       {
         tipo == "psicologo" && (
           <Psicologo hashtag={hashtag} setHashtag={setHashtag} publicacion={publicacion} setPublicacion={setPublicacion} />
@@ -48,6 +49,16 @@ const Crear = ({tipo}) => {
       >
         Crear
       </button>
+      </section>
+      <section className='w-1/3 py-6 lg:px-24 shadow hidden lg:block'>
+      <div className='py-3 px-6 rounded bg-gray-900 flex flex-col gap-2'>
+          <h2 className='text-2xl'>Temáticas más buscadas en las publicaciones de usuarios</h2>
+          <b>#Soledad</b>
+          <b>#Depresión</b>
+          <b>#Tristeza</b>
+          <b>#Esperanza</b>
+        </div>
+      </section>
     </div>
   );
 };
