@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import publicaciones from "../../../json/publications";
-import e from 'cors';
 
 const Publicaciones = ({ tipo }) => {
   const [search, setSearch] = useState("");

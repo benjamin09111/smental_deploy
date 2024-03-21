@@ -45,7 +45,20 @@ const UserPopup = ({setState}) => {
         <div className="">
           <button href="#" className="px-4 py-2 hover:bg-gray-100 flex w-full items-center">
             <span class="icon-[iconamoon--exit-thin] size-5 text-gray-800"></span>
-            <p className="text-sm font-medium text-gray-800 leading-none">Cerrar sesión</p>
+            <p
+            onClick={()=>{
+              console.log("hi")
+              localStorage.removeItem('token');
+              localStorage.removeItem('type');
+              localStorage.removeItem('edad');
+              localStorage.removeItem('email');
+              localStorage.removeItem('usuario_id');
+              if(localStorage.getItem("psicologo_id")){
+                localStorage.removeItem('psicologo_id', psicologo_id);
+              }
+              window.location.reload();
+            }}
+            className="text-sm font-medium text-gray-800 leading-none">Cerrar sesión</p>
           </button>
         </div>
       </div>

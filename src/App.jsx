@@ -6,7 +6,7 @@ import NavP from './components/nav_principal/NavbarP';
 import Tutorial from "./pages/principal/Tutorial";
 
 function App() {
-  const [logeado, setLogeado] = useState(true);
+  const [logeado, setLogeado] = useState(false);
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const [terminos, setTerminos] = useState(false);

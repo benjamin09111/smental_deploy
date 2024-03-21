@@ -37,7 +37,7 @@ const Crear = ({tipo}) => {
         )
       }
       {
-        tipo == "usuario" && (
+        tipo == "US373_USER$%7FEV" && (
           <Usuario hashtag={hashtag} setHashtag={setHashtag} publicacion={publicacion} setPublicacion={setPublicacion} />
         )
       }

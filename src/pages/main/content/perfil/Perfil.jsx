@@ -58,7 +58,7 @@ const Perfil = ({ tipo }) => {
                 />
             }
             {
-                tipo === "usuario" &&
+                tipo === "US373_USER$%7FEV" &&
                 <Usuario
                     username={usuario.username}
                     email={usuario.email}
