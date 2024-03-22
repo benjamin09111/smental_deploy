@@ -26,14 +26,7 @@ const Login = ({ open, setOpen, setState }) => {
             });
 
             const data = await response.json();
-
-            const type = data.tipo;
-            const token = data.token;
             const message = data.message;
-            const usuario_id = data.usuario_id;
-            const psicologo_id = data.psicologo_id;
-            const edad = data.edad;
-            const email = data.correo;
 
             if(message == "error credenciales") {
                 setMessage("Error de credenciales");
@@ -47,10 +40,19 @@ const Login = ({ open, setOpen, setState }) => {
                 return;
             }
 
+            const type = data.tipo;
+            const token = data.token;
+            const usuario_id = data.resultado.usuario_id;
+            const psicologo_id = data.psicologo_id;
+            const edad = data.resultado.edad;
+            const email = data.resultado.correo;
+            const nombre = data.resultado.nombre_usuario;
+
             localStorage.setItem('token', token);
             localStorage.setItem('type', type);
             localStorage.setItem('edad', edad);
             localStorage.setItem('email', email);
+            localStorage.setItem('nombre', nombre);
             localStorage.setItem('usuario_id', usuario_id);
             
             if(psicologo_id != null) {

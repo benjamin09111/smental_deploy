@@ -9,7 +9,7 @@ const Principal = ({ open, setOpen, terminos, setTerminos }) => {
     const [state, setState] = useState("login");
     //pagina que se ve al no estar logeado, get started
     return (
-        <div style={{ minHeight: "100vh" }} className="bg-gradient-secondary flex flex-col justify-center items-center w-full">
+        <div style={{ minHeight: "100vh" }} className="bg-gradient-secondary pt-[10vh] flex flex-col w-full">
             <div className="flex flex-col lg:flex-row px-6 pt-6 pb-6">
                 <div className="one">
                     <Animation duration={1}>
