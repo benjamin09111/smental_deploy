@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Animation from "../../Animation";
 
-const Tutorial = ({setTutorial}) => {
+const Tutorial = () => {
     const [state, setState] = useState("uno");
     return (
         <div style={{minHeight: "100vh"}} className='bg-gradient-secondary text-white flex justify-center items-center lg:px-96'>
@@ -37,7 +37,7 @@ const Tutorial = ({setTutorial}) => {
                         <p>Gracias por elegir nuestro servicio y formar parte de esta comunidad de apoyo y libertad. Confiamos en que nos ayudarás a lograr un buen ambiente y ayudar a muchas otras personas que pueden empatizar con tu vida o situación. ¡Empezemos!</p>
                         <button className='bg-gradient-primary rounded text-white py-3 w-full' type='button' onClick={()=>{
                             localStorage.setItem("tutorial", true);
-                            window.location.reload();
+                            window.location.href = "/";
                         }}>Comenzar</button>
                     </div>
                 </Animation>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Wave from "react-wavify";
 import Login from "./Login";
 import Register from "./Register";
@@ -8,6 +8,14 @@ import Terminos from "./Terminos";
 const Principal = ({ open, setOpen, terminos, setTerminos }) => {
     const [state, setState] = useState("login");
     //pagina que se ve al no estar logeado, get started
+
+    useEffect(()=>{
+        const tutorial = localStorage.getItem("tutorial");
+        if(!tutorial){
+            window.location.href = "/intro";
+        }
+    }, [])
+
     return (
         <div style={{ minHeight: "100vh" }} className="bg-gradient-secondary pt-[10vh] flex flex-col w-full">
             <div className="flex flex-col lg:flex-row px-6 pt-6 pb-6">

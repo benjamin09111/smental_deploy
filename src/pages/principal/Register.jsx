@@ -6,7 +6,6 @@ const Register = ({ open, setOpen, setState }) => {
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false);
 
-
     const [data, setData] = useState({
         nombre: "",
         correo: "",
