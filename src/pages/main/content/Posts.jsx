@@ -7,11 +7,11 @@ const Posts = () => {
   const [show, setShow] = useState("psicologos");
   return (
     <div className="flex items-start w-full">
-      <section className='flex flex-col pl-12 w-2/3 py-6'>
-        <div className="flex flex-col gap-6 pb-6">
+      <section className='flex flex-col lg:pl-12 lg:w-2/3 py-6'>
+        <div className="flex px-4 lg:px-0 flex-col gap-6 pb-6">
           <h1 className="text-3xl text-gradient font-bold">Descubre información profesional</h1>
           <p>Te invitamos a leer las publicaciones de nuestros profesionales. Además, puedes informarte más sobre temas relacionados con la psicología y salud mental, según tus preferencias utiliza los botones de abajo.</p>
-          <div className="flex gap-6">
+          <div className="flex flex-col lg:flex-row gap-6">
             <button className={`px-3 py-2 rounded bg-gradient-primary cursor-pointer ${show === "psicologos" ? "bg-gradient-primary" : "bg-gradient-secondary"}`} onClick={() => setShow("psicologos")}>Escrita por nuestros psicólogos profesionales</button>
             <button className={`px-3 py-2 rounded bg-gradient-primary cursor-pointer ${show === "general" ? "bg-gradient-primary" : "bg-gradient-secondary"}`} onClick={() => setShow("general")}>Información general</button>
           </div>

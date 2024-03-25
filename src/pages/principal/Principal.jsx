@@ -5,7 +5,7 @@ import Register from "./Register";
 import Animation from "../../Animation";
 import Terminos from "./Terminos";
 
-const Principal = ({ open, setOpen, terminos, setTerminos }) => {
+const Principal = ({ terminos, setTerminos }) => {
     const [state, setState] = useState("login");
     //pagina que se ve al no estar logeado, get started
 
@@ -30,15 +30,15 @@ const Principal = ({ open, setOpen, terminos, setTerminos }) => {
                                 window.location.reload();
                             }}>VER PRESENTACIÓN DE LA APP</b>
                             <b type="button" className="text-gray-400 cursor-pointer font-semibold hover:text-gray-300 text-left">CONTACTARSE CON EL SOPORTE</b>
-                            <b type="button" onClick={() => setOpen(true)} className="text-gray-400 cursor-pointer font-semibold hover:text-gray-300 text-left">¿CÓMO SER PSICÓLOGO DE LA APP?</b>
+                            <b type="button" className="text-gray-400 cursor-pointer font-semibold hover:text-gray-300 text-left">¿CÓMO SER PSICÓLOGO DE LA APP?</b>
                         </div>
                     </Animation>
                 </div>
                 <div className="flex flex-col justify-center items-center w-full lg:pt-0 pt-12 two pb-12 lg:pb-0">
                     {state === "login" && <Animation duration={0.5}>
-                        <Login open={open} setOpen={setOpen} setState={setState} /></Animation>}
+                        <Login setState={setState} /></Animation>}
                     {state === "register" && <Animation duration={0.5}>
-                        <Register open={open} setOpen={setOpen} setState={setState} /></Animation>}
+                        <Register setState={setState} /></Animation>}
                 </div>
             </div>
 

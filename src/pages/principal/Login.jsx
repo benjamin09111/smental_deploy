@@ -60,7 +60,7 @@ const Login = ({ open, setOpen, setState }) => {
             }
 
             setLoading(false);
-            window.location.reload();
+            window.location.href = "/home";
             return;
         } catch (error) {
             setLoading(false);

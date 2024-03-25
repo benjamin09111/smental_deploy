@@ -53,6 +53,7 @@ const UserPopup = ({setState}) => {
               localStorage.removeItem('edad');
               localStorage.removeItem('email');
               localStorage.removeItem('usuario_id');
+              localStorage.removeItem('nombre');
               if(localStorage.getItem("psicologo_id")){
                 localStorage.removeItem('psicologo_id', psicologo_id);
               }

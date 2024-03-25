@@ -9,7 +9,8 @@ const Crear = ({tipo}) => {
     descripcion: "",
     fecha: "",
     autor_id: "",
-    imagen: ""
+    imagen: "",
+    nombre: localStorage.getItem("nombre")
   });
 
   const [hashtag, setHashtag] = useState("");
@@ -30,7 +31,7 @@ const Crear = ({tipo}) => {
 
   return (
     <div className="flex items-start w-full">
-      <section className='flex flex-col pl-12 w-2/3 pt-6'>
+      <section className='flex flex-col lg:pl-12 lg:w-2/3 px-4 lg:px-0 pt-6'>
       {
         tipo == "psicologo" && (
           <Psicologo hashtag={hashtag} setHashtag={setHashtag} publicacion={publicacion} setPublicacion={setPublicacion} />

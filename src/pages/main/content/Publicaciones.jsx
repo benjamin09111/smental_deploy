@@ -5,7 +5,7 @@ const Publicaciones = ({ tipo }) => {
   const [search, setSearch] = useState("");
   return (
     <div className='flex items-start w-full'>
-      <section className='flex flex-col pl-12 w-2/3'>
+      <section className='flex flex-col lg:pl-12 lg:w-2/3'>
       <div className='flex flex-col gap-6 px-4 lg:px-0 py-6'>
         <h1 className='text-gradient text-3xl font-bold'>Conoce y comparte las experiencias usuarios</h1>
 

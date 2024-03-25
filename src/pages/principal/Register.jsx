@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import Overlay from "./Overlay";
-import Terminos from "./Terminos";
 
-const Register = ({ open, setOpen, setState }) => {
+const Register = ({ setState }) => {
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(false);
+    const [abrir, setAbrir] = useState(false);
 
     const [data, setData] = useState({
         nombre: "",
@@ -40,10 +40,12 @@ const Register = ({ open, setOpen, setState }) => {
             }
 
             setLoading(false);
+            setState("login");
             setMessage("Cuenta registrada. Por favor, inicie sesión.");
             return;
 
         }catch(err){
+            console.log(err)
             setLoading(false);
             setMessage("Error de servidor. Vuelva a intentar más tarde.");
             return;
@@ -92,7 +94,7 @@ const Register = ({ open, setOpen, setState }) => {
             <p className='text-secondary-custom'>{message}</p>
             <div className="underline">Registro de psicólogo</div>
             <div className=''>
-                Si quieres registrarte como psicólogo, puedes enviar tu correo <b className='cursor-pointer text-gradient font-semibold' onClick={() => setOpen(!open)}>aquí</b>.
+                Si quieres registrarte como psicólogo, puedes enviar tu correo <b className='cursor-pointer text-gradient font-semibold' onClick={() => setAbrir(!abrir)}>aquí</b>.
             </div>
             {
                 loading && (
@@ -102,7 +104,7 @@ const Register = ({ open, setOpen, setState }) => {
                     </div>
                 )
             }
-            {open && (<Overlay setOpen={setOpen} />)}
+            {abrir && (<Overlay setAbrir={setAbrir} />)}
         </div>
     )
 }

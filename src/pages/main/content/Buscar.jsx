@@ -4,10 +4,10 @@ import Card from "./search/Card";
 const Buscar = () => {
   return (
     <div className="flex items-start w-full">
-      <section className='flex flex-col lg:pl-12 w-2/3 pt-6'>
+      <section className='flex px-4 lg:px-0 flex-col lg:pl-12 lg:w-2/3'>
       <h1 className="text-3xl text-gradient font-bold mt-6">Encuentra de forma rápida psicólogos profesionales y confiables según tus preferencias.</h1>
-      <div className="flex flex-col">
-        <p className="text-gray-300 text-lg">Búsqueda filtrada</p>
+      <div className="flex gap-3 flex-col pb-6 lg:pb-0">
+        <p className="text-gray-300 text-lg mt-2">Búsqueda filtrada</p>
         <div className="flex gap-3 flex-wrap">
         <b>Sexo</b>
         <b>Universidad</b>

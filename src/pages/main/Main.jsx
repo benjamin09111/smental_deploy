@@ -9,7 +9,7 @@ import authorizeFunction from '../../authorize/authorize';
 
 const Main = () => {
     const [state, setState] = useState("home");
-    const [tipo, setTipo] = useState("usuario");
+    const [tipo, setTipo] = useState(localStorage.getItem("type"));
     const [searchMode, setSearchMode] = useState(false);
     const [autorizado, setAutorizado] = useState(false);
 

@@ -1,7 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 import HashtagInput from './HashtagInput'
 
 const Usuario = ({publicacion, setPublicacion, hashtag, setHashtag}) => {
+  const [isChecked, setIsChecked] = useState(false);
+  
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+
+    if (!isChecked) {
+      setPublicacion({ ...publicacion, nombre: "Anónimo" });
+    } else {
+      setPublicacion({ ...publicacion, nombre: localStorage.getItem("nombre") || "" });
+    }
+  };
+  
   return (
     <div className='flex flex-col gap-6'>
       <div className="text-3xl text-gradient font-bold">
@@ -37,9 +49,9 @@ const Usuario = ({publicacion, setPublicacion, hashtag, setHashtag}) => {
         <HashtagInput hashtag={hashtag} setHashtag={setHashtag} />
       </div>
       <div className="flex my-6 gap-5 lg:w-1/2">
-        <b>
-          En caso de querer publicar de manera anónima, es decir, sin nombre de usuario, ir a perfil y colocar modo anónimo.
-        </b>
+        <input type="checkbox" name='check' checked={isChecked}
+        onChange={handleCheckboxChange} />
+        <label onClick={handleCheckboxChange} htmlFor="check" className='text-gray-200'>Publicar de manera anónima</label>
       </div>
     </div>
   )
