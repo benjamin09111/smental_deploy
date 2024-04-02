@@ -9,6 +9,7 @@ const Login = ({ open, setOpen, setState }) => {
     const [correo, setCorreo] = useState("");
     const [contrasena, setContrasena] = useState("");
 
+    const [abrir, setAbrir] = useState(false);
     const [terminos, setTerminos] = useState(false);
 
     const [message, setMessage] = useState("");
@@ -70,7 +71,11 @@ const Login = ({ open, setOpen, setState }) => {
     }
 
     return (
-        <div className='flex flex-col gap-3 text-white text-lg px-6'>
+        <div className='flex flex-col gap-3 text-white text-lg pl-12'>
+            {
+                abrir && <Overlay setAbrir={setAbrir} />
+            }
+            
             {
                 terminos && <Terminos setTerminos={setTerminos} />
             }
@@ -98,7 +103,7 @@ const Login = ({ open, setOpen, setState }) => {
             }
             <div className='text-gray-400'>Al ingresar a la aplicación, estás aceptando los <b className='underline text-gradient font-semibold cursor-pointer' onClick={() => setTerminos(true)}>términos y condiciones</b>.</div>
             <div className='text-gray-400'>
-                Si quieres registrarte como psicólogo, puedes enviar tu correo <b className='cursor-pointer text-gradient font-semibold' onClick={() => setOpen(!open)}>aquí</b>.
+                Si quieres registrarte como psicólogo, puedes enviar tu correo <b className='cursor-pointer text-gradient font-semibold' onClick={() => setAbrir(!abrir)}>aquí</b>.
             </div>
             {open && (<Overlay setOpen={setOpen} />)}
         </div>

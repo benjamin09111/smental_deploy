@@ -4,10 +4,12 @@ import Login from "./Login";
 import Register from "./Register";
 import Animation from "../../Animation";
 import Terminos from "./Terminos";
+import Overlay from "./Overlay";
 
 const Principal = ({ terminos, setTerminos }) => {
     const [state, setState] = useState("login");
     //pagina que se ve al no estar logeado, get started
+    const [abrir, setAbrir] = useState(false);
 
     useEffect(()=>{
         const tutorial = localStorage.getItem("tutorial");
@@ -18,7 +20,11 @@ const Principal = ({ terminos, setTerminos }) => {
 
     return (
         <div style={{ minHeight: "100vh" }} className="bg-gradient-secondary pt-[10vh] flex flex-col w-full">
-            <div className="flex flex-col lg:flex-row px-6 pt-6 pb-6">
+            {
+                abrir && <Overlay setAbrir={setAbrir} />
+            }
+            
+            <div className="flex flex-col lg:flex-row px-6 pt-12 justify-between pb-6">
                 <div className="one">
                     <Animation duration={1}>
                         <div className="flex flex-col gap-4">
@@ -30,11 +36,11 @@ const Principal = ({ terminos, setTerminos }) => {
                                 window.location.reload();
                             }}>VER PRESENTACIÓN DE LA APP</b>
                             <b type="button" className="text-gray-400 cursor-pointer font-semibold hover:text-gray-300 text-left">CONTACTARSE CON EL SOPORTE</b>
-                            <b type="button" className="text-gray-400 cursor-pointer font-semibold hover:text-gray-300 text-left">¿CÓMO SER PSICÓLOGO DE LA APP?</b>
+                            <b type="button" className="text-gray-400 cursor-pointer font-semibold hover:text-gray-300 text-left" onClick={()=>setAbrir(!abrir)}>¿CÓMO SER PSICÓLOGO DE LA APP?</b>
                         </div>
                     </Animation>
                 </div>
-                <div className="flex flex-col justify-center items-center w-full lg:pt-0 pt-12 two pb-12 lg:pb-0">
+                <div className="flex flex-col w-full lg:pt-0 pt-12 two pb-12 lg:pb-0">
                     {state === "login" && <Animation duration={0.5}>
                         <Login setState={setState} /></Animation>}
                     {state === "register" && <Animation duration={0.5}>
