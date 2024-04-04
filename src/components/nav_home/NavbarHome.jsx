@@ -51,7 +51,7 @@ const NavbarHome = ({ tipo }) => {
             {/* Contenedor flex para alinear el botón de búsqueda y la foto de usuario */}
             <div className="flex items-center space-x-2">
                 <button onClick={toggleUserPopup} className="focus:outline-none flex items-center">
-                    <img src="https://via.placeholder.com/40" alt="Foto de perfil" className="h-9 w-9 rounded-full border-2 border-gray-700" />
+                    <img src="/user.webp" alt="Foto de perfil" className="h-9 w-9 rounded-full border-2 border-gray-700" />
                     <div className="text-primary-custom font-medium">
                         <span className="hidden lg:inline-block">Usuario</span>
                     </div>

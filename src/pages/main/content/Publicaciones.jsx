@@ -8,12 +8,6 @@ const Publicaciones = ({ tipo }) => {
       <section className='flex flex-col lg:pl-12 lg:w-2/3'>
       <div className='flex flex-col gap-6 px-4 lg:px-0 py-6'>
         <h1 className='text-gradient text-3xl font-bold'>Conoce y comparte las experiencias usuarios</h1>
-
-        <div className='flex items-center gap-3'>
-          <span class="icon-[ic--outline-search] text-2xl"></span>
-
-          <input type="text" name='search' value={search} onChange={(e) => setSearch(e.target.value)} className='lg:w-1/3 focus:outline-none rounded bg-transparent px-2 py-2' style={{border: "1px solid gray"}} placeholder='Buscar por temática...' />
-        </div>
       </div>
       {
         search === "" ? (
@@ -120,8 +114,12 @@ const Publicaciones = ({ tipo }) => {
         )
       }
       </section>
-      <section className='w-1/3 py-6 lg:px-24 shadow hidden lg:block'>
-        <div className='py-3 px-6 rounded bg-gray-900 flex flex-col gap-2'>
+      <section className='w-1/3 py-6 lg:px-24 relative shadow hidden lg:block'>
+      <div className='flex items-center gap-3 fixed w-1/2 bg-gray-950 pt-6 pb-2 top-[10vh]'>
+          <span class="icon-[ic--outline-search] text-2xl"></span>
+          <input type="text" name='search' value={search} onChange={(e) => setSearch(e.target.value)} className='lg:w-1/3 focus:outline-none rounded bg-transparent px-2 py-2' style={{border: "1px solid gray"}} placeholder='Buscar por temática...' />
+        </div>
+        <div className='py-3 my-12 px-6 rounded bg-gray-900 flex flex-col gap-2'>
           <h2 className='text-2xl'>Temáticas más buscadas en las publicaciones de usuarios</h2>
           <b>#Soledad</b>
           <b>#Depresión</b>

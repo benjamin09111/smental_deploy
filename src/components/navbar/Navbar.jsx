@@ -49,11 +49,11 @@ const Navbar = ({ tipo, setState }) => {
             
             <div className="flex items-center space-x-2">
                 <button onClick={toggleUserPopup} className="focus:outline-none flex items-center gap-1">
-                    <img src="https://via.placeholder.com/40" alt="Foto de perfil" className="h-9 w-9 rounded-full border-2 border-gray-700" />
+                    <img src="/user.webp" alt="Foto de perfil" className="h-9 w-9 rounded-full border-2 border-gray-700" />
                     <div className="text-primary-custom font-medium">
                         <span className="hidden lg:inline-block">
                             {
-                                tipo === "usuario" ? "Usuario" : (tipo ==="psicologo" ? "Psicólogo" : "Admin") 
+                                tipo === "US373_USER$%7FEV" ? "Usuario" : (tipo ==="psicologo" ? "Psicólogo" : "Admin") 
                             }
                         </span>
                     </div>

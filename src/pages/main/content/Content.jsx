@@ -5,12 +5,16 @@ import Buscar from "./Buscar";
 import ChatBot from "./ChatBot";
 import Terminos from './Terminos';
 import Posts from "./Posts";
+import filtrarPubli from "./filtrarPubli";
 
 const Content = ({ setState, state, tipo, setTipo }) => {
     return (
         <div style={{minHeight: "100vh"}} className='flex lg:pl-64 flex-col relative w-full bg-gray-950 pb-24'>
             {
                 state === "home" && (<Publicaciones tipo={tipo} />)
+            }
+            {
+                state === "filtrar" && (<filtrarPubli />)
             }
             {
                 state === "posts" && (<Posts />)

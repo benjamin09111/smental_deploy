@@ -18,7 +18,7 @@ const UserPopup = ({setState}) => {
             ></path>
           </svg>
           <p className="pt-2 text-lg font-semibold text-gray-50">{localStorage.getItem("nombre")}</p>
-          <p className="text-sm text-gray-100">{localStorage.getItem("email")}</p>
+          <p className="text-sm text-gray-100">{localStorage.getItem("email").length > 27 ? localStorage.getItem("email").slice(0,27)+"..." : localStorage.getItem("email")}</p>
           <div className="mt-5">
             <button onClick={()=>setState("perfil")} className="border rounded-full py-2 px-4 text-xs font-semibold text-gray-100 hover:bg-gray-800">
               Ver perfil
