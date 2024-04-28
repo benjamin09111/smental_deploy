@@ -16,7 +16,6 @@ const NavbarP = ({setOpen, open, terminos, setTerminos}) => {
         <p className="underline cursor-pointer" onClick={()=> setTerminos(!terminos)}>Términos y condiciones</p>
       </div>
       <div className="flex items-center gap-4">
-      <button className='px-3 py-2 rounded bg-gradient-primary' onClick={() => setAbrir(!abrir)}>Registrarme como psicólogo</button>
       <p className='text-center text-xs'>© Derechos reservados 2024</p>
       </div>
       {

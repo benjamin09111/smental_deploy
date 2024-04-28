@@ -71,7 +71,7 @@ const Login = ({ open, setOpen, setState }) => {
     }
 
     return (
-        <div className='flex flex-col gap-3 text-white text-lg pl-12'>
+        <div className='flex flex-col gap-3 pt-12 lg:pt-0 text-white text-lg lg:pl-12'>
             {
                 abrir && <Overlay setAbrir={setAbrir} />
             }

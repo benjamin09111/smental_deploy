@@ -2,7 +2,7 @@ import React from 'react'
 
 const Aside = ({ state, setState, tipo }) => {
     return (
-        <div style={{ height: "95vh" }} className='hidden lg:flex important flex-col fixed justify-between pb-16 w-64 border-r-2 bg-gray-900/90 border-gray-700/90 pt-6'>
+        <div style={{ height: "95vh" }} className='hidden lg:flex important flex-col fixed justify-between pb-16 w-64 bg-gray-900/90 pt-6'>
             <div>
                 {
                     (tipo === "US373_USER$%7FEV") && (

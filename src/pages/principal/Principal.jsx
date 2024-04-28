@@ -24,8 +24,8 @@ const Principal = ({ terminos, setTerminos }) => {
                 abrir && <Overlay setAbrir={setAbrir} />
             }
             
-            <div className="flex flex-col lg:flex-row px-6 pt-12 justify-between pb-6">
-                <div className="one">
+            <div className="flex flex-col lg:flex-row px-6 lg:px-16 xl:px-16 2xl:px-44 lg:py-36 lg:gap-36 justify-between">
+                <div className="one ">
                     <Animation duration={1}>
                         <div className="flex flex-col gap-4">
                             <h1 className="text-5xl font-bold text-gradient">BIENVENIDO A SALUD MENTAL SIN NOMBRE</h1>
@@ -40,7 +40,7 @@ const Principal = ({ terminos, setTerminos }) => {
                         </div>
                     </Animation>
                 </div>
-                <div className="flex flex-col w-full lg:pt-0 pt-12 two pb-12 lg:pb-0">
+                <div className="flex flex-col w-full lg:pt-0 pt-12 two pb-12 lg:pb-0 ">
                     {state === "login" && <Animation duration={0.5}>
                         <Login setState={setState} /></Animation>}
                     {state === "register" && <Animation duration={0.5}>
@@ -50,7 +50,7 @@ const Principal = ({ terminos, setTerminos }) => {
 
             {terminos && (<Terminos setTerminos={setTerminos} />)}
 
-            <div className="absolute bottom-0 w-full olas">
+            <div className="absolute hidden lg:block bottom-0 w-full olas">
                 <div className="absolute bottom-0 w-full">
                     <Wave
                         fill="#40c7e57b"
