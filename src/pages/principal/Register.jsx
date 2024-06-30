@@ -7,15 +7,17 @@ const Register = ({ setState }) => {
     const [abrir, setAbrir] = useState(false);
 
     const [data, setData] = useState({
-        nombre: "",
-        correo: "",
-        contrasena: "",
-        edad: "",
-        numero_telefono: ""
+        username: "",
+        password: "",
+        name: "",
+        country: "",
+        age: 0,
+        email: "",
     });
 
     const signup = async () => {
         setLoading(true);
+        console.log(data);
         try{
             const response = await fetch('http://localhost:3000/registeruser', {
                 method: 'POST',
@@ -27,21 +29,11 @@ const Register = ({ setState }) => {
 
             const result = await response.json();
 
-            if(result.message == "correo nombre") {
-                setLoading(false);
-                setMessage("El nombre de usuario o el email ya están en uso.");
-                return;
-            }
-
-            if(result.message == "fallo"){
-                setLoading(false);
-                setMessage("No se ha podido registrar la cuenta. Vuelva a intentar.");
-                return;
-            }
-
+            setMessage(result.message);
             setLoading(false);
+
             setState("login");
-            setMessage("Cuenta registrada. Por favor, inicie sesión.");
+            //setMessage("Cuenta registrada. Por favor, inicie sesión.");
             return;
 
         }catch(err){
@@ -53,49 +45,57 @@ const Register = ({ setState }) => {
     }
 
     return (
-        <div className='flex flex-col gap-3 text-white text-lg px-6'>
-            <h2 className='text-4xl text-center font-bold'>Crea tu cuenta</h2>
-            <div className="underline">Registro de usuario</div>
+        <div className='flex flex-col gap-3 text-white text-lg'>
+            <h2 className='text-4xl text-center font-bold'>REGISTER</h2>
             <div className='flex gap-10'>
-                <span className="icon-[ic--sharp-email] text-2xl  bg-gradient-primary"></span>
-                <input type="email" name='correo' placeholder="Correo" className='input'
-                    value={data.correo} onChange={(e) => setData({ ...data, correo: e.target.value })} />
+            <span className="icon-[mdi--user] text-2xl  bg-gradient-primary"></span>
+                <input type="text" name='correo' placeholder="Usuario" className='input'
+                    value={data.username} onChange={(e) => setData({ ...data, username: e.target.value })} />
             </div>
             <div className='flex gap-10'>
                 <span className="icon-[mdi--password] text-2xl  bg-gradient-primary"></span>
-                <input type="password" placeholder="Contraseña" name='contrasena' className='input'
-                    value={data.contrasena} onChange={(e) => setData({ ...data, contrasena: e.target.value })} />
+                <input type="password" placeholder="Contraseña" name='password' className='input'
+                    value={data.password} onChange={(e) => setData({ ...data, password: e.target.value })} />
             </div>
             <div className='flex flex-col gap-3'>
                 <div className='flex gap-10'>
                     <span className="icon-[mdi--user] text-2xl  bg-gradient-primary"></span>
-                    <input type="text" name='nombre' className='input' placeholder="Nombre de usuario" value={data.nombre} onChange={(e) => setData({ ...data, nombre: e.target.value })} />
+                    <input type="text" name='nombre' className='input' placeholder="Nombre" value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} />
                 </div>
-                <p className='text-xs underline'>Este nombre se verá en la aplicación. Se recomienda no utilizar un nombre real.</p>
+                {
+                    data.name.length > 0 && <p className='text-xs text-center underline'>Este nombre se verá en la aplicación. Se recomienda no utilizar un nombre real.</p>
+                }
+            </div>
+            <div className='flex gap-10'>
+                <span className="icon-[ic--sharp-email] text-2xl  bg-gradient-primary"></span>
+                <input type="email" name='email' placeholder="Correo" className='input'
+                    value={data.email} onChange={(e) => setData({ ...data, email: e.target.value })} />
             </div>
 
             <div className='flex flex-col gap-3'>
                 <div className='flex gap-10'>
                     <span className="icon-[foundation--page] text-2xl bg-gradient-primary"></span>
-                    <input type="number" name='edad' className='input' placeholder="Edad del usuario" value={data.edad} onChange={(e) => setData({ ...data, edad: e.target.value })} />
+                    <input type="number" name='age' className='input' placeholder="Edad" value={data.age} onChange={(e) => setData({ ...data, age: e.target.value })} />
                 </div>
             </div>
 
             <div className='flex flex-col gap-3'>
                 <div className='flex gap-10'>
                     <span className="icon-[mingcute--phone-fill] text-2xl bg-gradient-primary"></span>
-                    <input type="text" name='edad' className='input' placeholder="Incluye código del país sin el + " value={data.numero_telefono} onChange={(e) => setData({ ...data, numero_telefono: e.target.value })} />
+                    <input type="text" name='phone' className='input' placeholder="Incluye código del país " value={data.phone} onChange={(e) => setData({ ...data, phone: e.target.value })} />
                 </div>
-                <p className='text-xs underline'>Utilizaremos tu número para confirmar tu cuenta.</p>
+            </div>
+
+            <div className='flex flex-col gap-3'>
+                <div className='flex gap-10'>
+                    <span className="icon-[mdi--world] text-2xl bg-gradient-primary"></span>
+                    <input type="text" name='country' className='input' placeholder="País " value={data.country} onChange={(e) => setData({ ...data, country: e.target.value })} />
+                </div>
             </div>
             
             <button className='w-full bg-gradient-primary mt-4 py-2' type='button' onClick={signup}>Registrarse</button>
             <div className='text-center'>¿Ya tienes una cuenta? <b className='cursor-pointer' onClick={() => setState("login")}>inicia sesión.</b></div>
             <p className='text-secondary-custom'>{message}</p>
-            <div className="underline">Registro de psicólogo</div>
-            <div className=''>
-                Si quieres registrarte como psicólogo, puedes enviar tu correo <b className='cursor-pointer text-gradient font-semibold' onClick={() => setAbrir(!abrir)}>aquí</b>.
-            </div>
             {
                 loading && (
                     <div className='flex flex-col justify-center items-center gap-3 text'>

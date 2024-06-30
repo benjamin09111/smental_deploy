@@ -15,6 +15,8 @@ import Principal from "./pages/principal/Principal.jsx";
 import Unauthorized from './components/Unauthorized.jsx';
 import Tutorial from "./pages/principal/Tutorial.jsx";
 import NavP from "./components/nav_principal/NavbarP.jsx";
+import Admin from "./components/admin/Index.jsx";
+import AdminHome from "./components/admin/Home.jsx";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +39,14 @@ const router = createBrowserRouter([
     path: "/unauthorized",
     element: <Unauthorized />
   },
+  {
+    path: "/admin",
+    element: <Admin />
+  },
+  {
+    path: "/backend",
+    element: <AdminHome />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
