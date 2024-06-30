@@ -1,7 +1,26 @@
-import psicologos from "../../../json/psicologos";
+import { useState, useEffect } from "react";
 import Card from "./search/Card";
 
 const Buscar = () => {
+  const [psicologos, setPsicos] = useState([]);
+
+  useEffect(() => {
+    const fetchPsicologos = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/get_psicologos');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setPsicos(data);
+      } catch (error) {
+        console.log('Fail!');
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchPsicologos();
+  }, []);
   return (
     <div className="flex items-start w-full">
       <section className='flex px-4 lg:px-0 flex-col lg:pl-12 lg:w-2/3'>
@@ -10,9 +29,12 @@ const Buscar = () => {
         <p className="text-gray-300 text-lg mt-2">Búsqueda filtrada</p>
         <div className="flex gap-3 flex-wrap">
         <b>Sexo</b>
-        <b>Universidad</b>
-        <b>Ubicación</b>
-        <b>Nombre</b>
+        <b>Edad</b>
+        <b>Método</b>
+        <b>Pais</b>
+        <b>Región</b>
+        <b>Ciudad</b>
+        <b>Comuna</b>
         </div>
       </div>
     <div className="flex flex-wrap gap-6">
@@ -21,16 +43,18 @@ const Buscar = () => {
         <Card
         nombre={psicologo.nombre}
         apellido1={psicologo.apellido1}
-        apellido2={psicologo.apellido2}
+        apellido_2={psicologo.apellido_2}
         edad={psicologo.edad}
         universidad={psicologo.universidad}
-        ubicacion={psicologo.ubicacion}
         sexo={psicologo.sexo}
         descripcion={psicologo.descripcion}
-        publicaciones={psicologo.publicaciones}
-        email={psicologo.email}
-        numero={psicologo.numero}
-        seguidores={psicologo.seguidores}
+        correo={psicologo.correo}
+        telefono={psicologo.telefono}
+        pais={psicologo.pais}
+        metodo={psicologo.metodo}
+        region={psicologo.region}
+        ciudad={psicologo.ciudad}
+        comuna={psicologo.comuna}
         />
       ))
     }

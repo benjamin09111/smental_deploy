@@ -14,9 +14,6 @@ const Content = ({ setState, state, tipo, setTipo }) => {
                 state === "home" && (<Publicaciones tipo={tipo} />)
             }
             {
-                state === "filtrar" && (<filtrarPubli />)
-            }
-            {
                 state === "posts" && (<Posts />)
             }
             {

@@ -39,6 +39,7 @@ const Psico = () => {
             });
 
             if (!response.ok) {
+                console.log(response.message);
                 setMessage("Error!");
                 throw new Error('Error al crear psicólogo');
             }
@@ -108,7 +109,7 @@ const Psico = () => {
                 <input
                     type="text"
                     name="sexo"
-                    placeholder="Sexo"
+                    placeholder="Sexo (F / M)"
                     value={formData.sexo}
                     onChange={handleChange}
                 />

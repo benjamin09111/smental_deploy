@@ -13,8 +13,11 @@ const Principal = ({ terminos, setTerminos }) => {
 
     useEffect(()=>{
         const tutorial = localStorage.getItem("tutorial");
+        const token = localStorage.getItem("token");
         if(!tutorial){
             window.location.href = "/intro";
+        }else if(token){
+            window.location.href = "/home";
         }
     }, [])
 

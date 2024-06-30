@@ -11,9 +11,6 @@ const Template = ({titulo, fecha, hashtag, descripcion, autor, index}) => {
                 <b className='font-normal text-gray-100'>{autor}</b>
               </div>
             </div>
-            <div>
-              <span className="icon-[material-symbols--report] text-xl text-red-300 cursor-pointer hover:text-red-600"></span>
-            </div>
           </div>
 
           <div className='flex flex-col gap-2'>
