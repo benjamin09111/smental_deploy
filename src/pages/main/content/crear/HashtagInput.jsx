@@ -6,7 +6,7 @@ const HashtagInput = ({ hashtag, setHashtag }) => {
   const [close, setClose] = useState(false);
 
   useEffect(() => {
-    if (close && hashtag == "") {
+    if (close && hashtag === "") {
       setClose(false);
     }
   }, [hashtag, close]);
@@ -30,25 +30,20 @@ const HashtagInput = ({ hashtag, setHashtag }) => {
     setClose(true);
   };
 
-  const handleAddHashtag = () => {
-    // Aquí puedes agregar lógica para añadir el hashtag seleccionado a alguna lista, por ejemplo.
-  };
-
   return (
     <div>
       <div className="flex gap-10">
-      <span class="icon-[icon-park-solid--topic] text-2xl bg-gradient-primary"></span>
-      <input
-        className='input lg:w-1/3'
-        type="text"
-        value={hashtag}
-        onChange={handleInputChange}
-        placeholder="Ingrese una sola temática"
-      />
+        <span className="icon-[icon-park-solid--topic] text-2xl bg-gradient-primary"></span>
+        <input
+          className='input lg:w-1/3'
+          type="text"
+          value={hashtag}
+          onChange={handleInputChange}
+          placeholder="Ingrese una sola temática"
+        />
       </div>
-      {
-        (hashtag !== "" && !close) && (
-          <>
+      {(hashtag !== "" && !close) && (
+        <>
           <p className='underline mt-4 mb-2'>Temáticas sugeridas</p>
           <ul className='bg-gray-900 text-gray-300 rounded h-32 overflow-y-auto'>
             {suggestedHashtags.length > 0 ? (
@@ -65,9 +60,8 @@ const HashtagInput = ({ hashtag, setHashtag }) => {
               <li className='pl-4 py-1 text-gray-300'>No hay sugerencias</li>
             )}
           </ul>
-          </>
-        )
-      }
+        </>
+      )}
     </div>
   );
 };

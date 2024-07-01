@@ -1,7 +1,7 @@
-import {useEffect, useState} from 'react'
+import React from "react";
 import HashtagInput from "./HashtagInput";
 
-const Psicologo = ({publicacion, setPublicacion, hashtag, setHashtag}) => {
+const Psicologo = ({ publicacion, setPublicacion, hashtag, setHashtag }) => {
   return (
     <div className='flex flex-col gap-4'>
       <div className="text-4xl text-gradient font-bold">
@@ -36,9 +36,9 @@ const Psicologo = ({publicacion, setPublicacion, hashtag, setHashtag}) => {
       <div className='mt-12'>
         <HashtagInput hashtag={hashtag} setHashtag={setHashtag} />
       </div>
-        <div>
-            <p>Agregar URL de la imagen del post</p>
-            <input
+      <div>
+        <p>Agregar URL de la imagen del post</p>
+        <input
           type="text"
           name="imagen"
           className="input"
@@ -48,9 +48,9 @@ const Psicologo = ({publicacion, setPublicacion, hashtag, setHashtag}) => {
             setPublicacion({ ...publicacion, imagen: e.target.value })
           }
         />
-        </div>
+      </div>
     </div>
   )
 }
 
-export default Psicologo
+export default Psicologo;

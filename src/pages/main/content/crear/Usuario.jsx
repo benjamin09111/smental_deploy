@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
-import HashtagInput from './HashtagInput'
+import React, { useState, useEffect } from 'react';
+import HashtagInput from './HashtagInput';
 
-const Usuario = ({publicacion, setPublicacion, hashtag, setHashtag}) => {
+const Usuario = ({ publicacion, setPublicacion, hashtag, setHashtag }) => {
   const [isChecked, setIsChecked] = useState(false);
-  
+
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
 
@@ -13,7 +13,7 @@ const Usuario = ({publicacion, setPublicacion, hashtag, setHashtag}) => {
       setPublicacion({ ...publicacion, nombre: localStorage.getItem("nombre") || "" });
     }
   };
-  
+
   return (
     <div className='flex flex-col gap-6'>
       <div className="text-3xl text-gradient font-bold">
@@ -45,16 +45,15 @@ const Usuario = ({publicacion, setPublicacion, hashtag, setHashtag}) => {
           }
         ></textarea>
       </div>
-      <div  className='mt-12'>
+      <div className='mt-12'>
         <HashtagInput hashtag={hashtag} setHashtag={setHashtag} />
       </div>
       <div className="flex my-6 gap-5 lg:w-1/2">
-        <input type="checkbox" name='check' checked={isChecked}
-        onChange={handleCheckboxChange} />
+        <input type="checkbox" name='check' checked={isChecked} onChange={handleCheckboxChange} />
         <label onClick={handleCheckboxChange} htmlFor="check" className='text-gray-200'>Publicar de manera anónima</label>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Usuario
+export default Usuario;
