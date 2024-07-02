@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import Usuario from "./crear/Usuario";
 
 const Crear = () => {
+
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState("");
   
   const [publicacion, setPublicacion] = useState({
     titulo: "",
     descripcion: "",
     fecha: "",
-    autor_id: "",
+    autor_id: localStorage.getItem("id"),
     imagen: "",
     nombre: localStorage.getItem("nombre")
   });
@@ -15,16 +18,21 @@ const Crear = () => {
   const [hashtag, setHashtag] = useState("");
 
   const create = async () => {
+    setLoading(true);
+    if(publicacion.titulo === "" || publicacion.descripcion === ""){
+      setMessage("Todos los campos son obligatorios.");
+      return;
+    }
     // obtener la fecha
     const today = new Date();
     const nuevaPublicacion = {
       ...publicacion,
       fecha: `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`,
-      autor_id: localStorage.getItem("nombre"),
       tematica: hashtag
     };
 
     try {
+      console.log(nuevaPublicacion);
       const response = await fetch('http://localhost:3000/create_publication', {
         method: 'POST',
         headers: {
@@ -35,12 +43,16 @@ const Crear = () => {
 
       if (response.ok) {
         const result = await response.json();
-        console.log("Publicación creada con éxito:", result);
-        // Aquí puedes agregar lógica para manejar la respuesta, como redirigir al usuario o mostrar un mensaje de éxito.
+        setMessage("Publicación creada.");
+        setLoading(false);
       } else {
+        setMessage("Error al crear publicación.");
+        setLoading(false);
         console.error('Error al crear la publicación:', response.statusText);
       }
     } catch (error) {
+      setLoading(false);
+      setMessage("Error al crear publicación.");
       console.error('Error al crear la publicación:', error);
     }
   };
@@ -49,6 +61,7 @@ const Crear = () => {
     <div className="flex items-start w-full">
       <section className='flex flex-col lg:pl-12 lg:w-2/3 px-4 lg:px-0 pt-6'>
         <Usuario hashtag={hashtag} setHashtag={setHashtag} publicacion={publicacion} setPublicacion={setPublicacion} />
+        <div className={message === "Publicación creada." ? `text-blue-500 mb-4` : `text-red-500 mb-4`}>{message}</div>
         <button
           className="lg:w-1/2 bg-gradient-primary py-2"
           type="button"

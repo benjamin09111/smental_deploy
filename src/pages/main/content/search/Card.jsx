@@ -1,25 +1,7 @@
 import img from "/user.webp";
 import { useState, useEffect } from "react";
 
-const Card = ({ nombre, apellido1, apellido_2, edad, universidad, descripcion, sexo, telefono, correo, pais, metodo, region, ciudad, comuna }) => {
-    const [imageUrl, setImageUrl] = useState('');
-
-    useEffect(() => {
-        const fetchImage = async () => {
-            try {
-                const response = await fetch('https://thispersondoesnotexist.com/image', {
-                    mode: 'no-cors'
-                });
-                const blob = await response.blob();
-                const imageURL = URL.createObjectURL(blob);
-                setImageUrl(imageURL);
-            } catch (error) {
-                console.error('Error fetching image:', error);
-            }
-        };
-
-        fetchImage();
-    }, []);
+const Card = ({ nombre, apellido1, apellido_2, edad, universidad, descripcion, sexo, telefono, correo, pais, metodo, region, ciudad, comuna, imagen }) => {
 
     return (
         <div className='flex flex-col lg:w-[25rem] shadow'>
@@ -31,7 +13,9 @@ const Card = ({ nombre, apellido1, apellido_2, edad, universidad, descripcion, s
                 <p className='text-lg text-gray-100'>{sexo == "M" ? "Masculino" : "Feminino"}</p>
                 <p className='text-lg text-gray-100'>Método: {metodo}</p>
             </div>
-            {imageUrl && <img src={imageUrl} alt="Generated person" className="w-full" />}
+            {
+                imagen === "" ? <img src={img} alt="No Profile Photo" className="w-full" /> : <img src={imagen} alt="Profile Picture" className="w-full" />
+            }
             <div className="p-2 bg-gray-900">
                 <h2 className="text-lg underline font-semibold">Descripción</h2>
                 <p className="text-gray-200"><b className="font-normal italic">

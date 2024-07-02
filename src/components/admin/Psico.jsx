@@ -17,6 +17,8 @@ const Psico = () => {
         comuna: '',
         pais: '',
         metodo: '',
+        imagen: '',
+        correo: '',
     });
 
     const handleChange = (e) => {
@@ -160,6 +162,20 @@ const Psico = () => {
                     name="metodo"
                     placeholder="Método"
                     value={formData.metodo}
+                    onChange={handleChange}
+                />
+                <input
+                    type="email"
+                    name="correo"
+                    placeholder="Correo"
+                    value={formData.correo}
+                    onChange={handleChange}
+                />
+                <input
+                    type="text"
+                    name="imagen"
+                    placeholder="Imagen URL"
+                    value={formData.imagen}
                     onChange={handleChange}
                 />
                 <button className='bg-blue-950 text-white rounded' type="submit">Crear Psicólogo</button>

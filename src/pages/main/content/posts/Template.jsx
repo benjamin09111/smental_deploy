@@ -1,25 +1,28 @@
 import React from 'react'
 
-const Template = ({titulo, fecha, hashtag, descripcion, autor, index}) => {
+const Template = ({ titulo, fecha, hashtag, descripcion, autor, index, imagen }) => {
   return (
-    <div key={index} className='flex flex-col px-3 pb-6 contenedor_publicacion'>
+    <div key={index} className='flex flex-col lg:flex-row p-6 mx-4 rounded-2xl shadow bg-gray-900 gap-12 relative'>
 
-          <div className='flex justify-between items-center pt-2 pb-1'>
-            <div className='flex items-center gap-6'>
-              <div className='flex items-center gap-2'>
-                <span className="icon-[solar--user-speak-bold] text-lg bg-gradient-primary"></span>
-                <b className='font-normal text-gray-100'>{autor}</b>
-              </div>
-            </div>
-          </div>
+      <img src={imagen} className='w-1/4 rounded' alt="post-image" />
 
-          <div className='flex flex-col gap-2'>
-            <div className='text-xl font-semibold'>{titulo}</div>
-            <p className='text-gray-300 font-semibold'>{descripcion}</p>
-            <b className='font-normal text-gray-500'>{fecha}</b>
-            <b className='text-lg text-white'>- {hashtag}</b>
-          </div>
-        </div>
+
+
+      <div className='flex flex-col'>
+        <div className='text-2xl font-semibold'>{titulo}</div>
+        <b className='font-normal text-gray-100'>{autor}</b>
+        <b className='font-normal text-gray-500'>Creado el {fecha}</b>
+        <b className='text-[1rem] text-gray-300 text-right'>Temática: {hashtag}</b>
+        <p className='text-gray-300 font-semibold mt-4'>"
+          {
+            descripcion.length > 100 ?
+            descripcion.slice(0, 100) + '...'
+              : descripcion
+          }"</p>
+      </div>
+
+      <button className='bottom-4 absolute right-8 hover:underline'>Leer más</button>
+    </div>
   )
 }
 

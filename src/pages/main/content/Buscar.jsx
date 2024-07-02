@@ -3,19 +3,22 @@ import Card from "./search/Card";
 
 const Buscar = () => {
   const [psicologos, setPsicos] = useState([]);
-
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const fetchPsicologos = async () => {
+      setLoading(true);
       try {
         const response = await fetch('http://localhost:3000/get_psicologos');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        setPsicos(data);
+        setPsicos(data.reverse());
       } catch (error) {
         console.log('Fail!');
         console.error('Error fetching data:', error);
+      }finally{
+      setLoading(false);
       }
     };
 
@@ -37,6 +40,9 @@ const Buscar = () => {
         <b>Comuna</b>
         </div>
       </div>
+    {
+      loading && (<span className="text-3xl text-blue-500 icon-[eos-icons--loading]"></span>)
+    }
     <div className="flex flex-wrap gap-6">
     {
       psicologos.map((psicologo)=> (
@@ -55,6 +61,7 @@ const Buscar = () => {
         region={psicologo.region}
         ciudad={psicologo.ciudad}
         comuna={psicologo.comuna}
+        imagen={psicologo.imagen}
         />
       ))
     }

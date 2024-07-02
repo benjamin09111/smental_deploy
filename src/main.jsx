@@ -17,6 +17,7 @@ import Tutorial from "./pages/principal/Tutorial.jsx";
 import NavP from "./components/nav_principal/NavbarP.jsx";
 import Admin from "./components/admin/Index.jsx";
 import AdminHome from "./components/admin/Home.jsx";
+import PsicoIndex from "./components/psico/Index.jsx";
 
 const router = createBrowserRouter([
   {
@@ -46,7 +47,11 @@ const router = createBrowserRouter([
   {
     path: "/backend",
     element: <AdminHome />
-  }
+  },
+  {
+    path: "/create-post",
+    element: <PsicoIndex />
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

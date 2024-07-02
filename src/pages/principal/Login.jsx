@@ -26,11 +26,13 @@ const Login = ({ open, setOpen, setState }) => {
             const data = await response.json();
             const message = data.message;
             const token = data.token;
+            const id = data.userId;
 
             console.log(data);
 
             localStorage.setItem('token', token);
             localStorage.setItem('nombre', username);
+            localStorage.setItem('id', id);
 
             setLoading(false);
             setMessage(message);
