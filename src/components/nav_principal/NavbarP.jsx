@@ -12,8 +12,7 @@ const NavbarP = ({setOpen, open, terminos, setTerminos}) => {
         abrir && <Overlay setAbrir={setAbrir} />
       }
       <div className="flex gap-2 items-center">
-        <b className="text-2xl">Salud Mental</b>
-        <p className="underline cursor-pointer" onClick={()=> setTerminos(!terminos)}>Términos y condiciones</p>
+        <b className="text-xl">Red social orientada a la salud mental</b>
       </div>
       <div className="flex items-center gap-4">
       <p className='text-center text-xs'>© Derechos reservados 2024</p>

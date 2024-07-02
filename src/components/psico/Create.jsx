@@ -8,7 +8,8 @@ const Create = () => {
         descripcion: "",
         tematica: "",
         imagen: "",
-        fecha: ""
+        fecha: "",
+        autor: ""
     });
 
     const createPost = async () => {
@@ -74,6 +75,16 @@ const Create = () => {
                 value={post.tematica}
                 onChange={(e) =>
                     setPost({ ...post, tematica: e.target.value })
+                }
+            />
+            <input
+                type="text"
+                name="autor"
+                className="input"
+                placeholder="Autor del post"
+                value={post.autor}
+                onChange={(e) =>
+                    setPost({ ...post, autor: e.target.value })
                 }
             />
             <input

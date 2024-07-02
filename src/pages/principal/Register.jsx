@@ -45,7 +45,7 @@ const Register = ({ setState }) => {
     }
 
     return (
-        <div className='flex flex-col gap-3 text-white text-lg'>
+        <div className='flex flex-col gap-3 text-white text-lg relative z-[99999]'>
             <h2 className='text-4xl text-center font-bold'>REGISTER</h2>
             <div className='flex gap-10'>
             <span className="icon-[mdi--user] text-2xl  bg-gradient-primary"></span>

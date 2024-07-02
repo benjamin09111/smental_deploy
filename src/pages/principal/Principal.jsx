@@ -27,12 +27,12 @@ const Principal = ({ terminos, setTerminos }) => {
                 abrir && <Overlay setAbrir={setAbrir} />
             }
             
-            <div className="flex flex-col lg:flex-row px-6 lg:px-16 xl:px-16 2xl:px-44 lg:py-36 lg:gap-36 justify-between">
+            <div className="flex flex-col lg:flex-row px-6 lg:px-16 xl:px-16 2xl:px-44 lg:py-2 md:py-0 lg:gap-36 justify-between">
                 <div className="one ">
                     <Animation duration={1}>
                         <div className="flex flex-col gap-4">
-                            <h1 className="text-5xl font-bold text-gradient">BIENVENIDO A SALUD MENTAL SIN NOMBRE</h1>
-                            <p className="font-semibold underline text-white text-lg text-right">Tu espacio seguro.</p>
+                            <h1 className="text-5xl font-bold text-gradient">BIENVENIDO A S-MENTAL SIN NOMBRE</h1>
+                            <p className="font-semibold text-white text-lg text-right">Tu espacio seguro.</p>
                             <p className="text-white mt-2">Un espacio libre y seguro para compartir y expresar tus emociones. Comparte con la comunidad y encuentra lo que necesitas.</p>
                             <b type="button" className="cursor-pointer text-gray-400 font-semibold hover:text-gray-300 text-left" onClick={() => {
                                 localStorage.removeItem("tutorial");
@@ -60,7 +60,7 @@ const Principal = ({ terminos, setTerminos }) => {
                         paused={false}
                         options={
                             {
-                                height: 30,
+                                height: 70,
                                 amplitude: 30,
                                 speed: 0.2,
                                 points: 6
@@ -74,7 +74,7 @@ const Principal = ({ terminos, setTerminos }) => {
                         paused={false}
                         options={
                             {
-                                height: 30,
+                                height: 70,
                                 amplitude: 30,
                                 speed: 0.2,
                                 points: 7
@@ -88,7 +88,7 @@ const Principal = ({ terminos, setTerminos }) => {
                         paused={false}
                         options={
                             {
-                                height: 60,
+                                height: 80,
                                 amplitude: 30,
                                 speed: 0.2,
                                 points: 5

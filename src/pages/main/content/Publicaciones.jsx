@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import PopUpReporte from './PopUpReporte';
 
 const Publicaciones = ({ tipo }) => {
+  const [popUp, setPopUp] = useState(false);
+  const [selectedPublicationName, setSelectedPublicationName] = useState("");
+  const [selectedPublicationId, setSelectedPublicationId] = useState("");
   const [publicaciones, setPublicaciones] = useState([]);
   const [message, setMessage] = useState("");
   const [message2, setMessage2] = useState("");
@@ -91,7 +95,26 @@ const Publicaciones = ({ tipo }) => {
                   </div>
                 </div>
                 <div>
-                  <span className="icon-[material-symbols--report] text-xl text-red-300 cursor-pointer hover:text-red-600"></span>
+                  {
+  // Mostrar el pop-up si popUp es true
+  popUp && selectedPublicationName === publicacion.nombre && selectedPublicationId === publicacion.id &&
+  <>
+    <div className='bg-gray-900 opacity-[0.8] fixed top-0 left-0 h-[100vh] w-[100vw] z-[999999]'></div>
+    <PopUpReporte 
+      nombre={selectedPublicationName} 
+      setState={setPopUp} 
+      userId={localStorage.getItem("id")} 
+      publicationId={publicacion.id} 
+    />
+  </>
+}
+                  <span
+                    onClick={() => {
+                      setSelectedPublicationName(publicacion.nombre);
+                      setSelectedPublicationId(publicacion.id);
+                      setPopUp(true);
+                    }}
+                    className="icon-[material-symbols--report] text-xl text-red-300 cursor-pointer hover:text-red-600"></span>
                 </div>
               </div>
 

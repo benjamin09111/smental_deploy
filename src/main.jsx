@@ -18,6 +18,7 @@ import NavP from "./components/nav_principal/NavbarP.jsx";
 import Admin from "./components/admin/Index.jsx";
 import AdminHome from "./components/admin/Home.jsx";
 import PsicoIndex from "./components/psico/Index.jsx";
+import LoginPsico from './components/psico/LoginPsico.jsx';
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
   {
     path: "/create-post",
     element: <PsicoIndex />
+  },
+  {
+    path: "/psicologo",
+    element: <LoginPsico />
   },
 ]);
 

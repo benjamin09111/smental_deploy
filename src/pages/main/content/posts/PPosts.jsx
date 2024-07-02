@@ -13,6 +13,7 @@ const PPosts = () => {
 
         if (!res.ok){
           setMessage("No se han podido obtener los artículos.");
+          return;
         }
 
         const data = await res.json();

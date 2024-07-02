@@ -46,7 +46,7 @@ const Login = ({ open, setOpen, setState }) => {
     }
 
     return (
-        <div className='flex flex-col gap-3 pt-12 lg:pt-0 text-white text-lg lg:pl-12'>
+        <div className='flex flex-col gap-3 pt-12 lg:pt-0 text-white text-lg lg:pl-12 relative z-[99999]'>
             {abrir && <Overlay setAbrir={setAbrir} />}
             {terminos && <Terminos setTerminos={setTerminos} />}
             <h2 className='text-4xl text-center font-bold'>LOGIN</h2>
@@ -62,7 +62,8 @@ const Login = ({ open, setOpen, setState }) => {
             </div>
             <button className='w-full bg-gradient-primary mt-4 py-2' type='button' onClick={signin}>INICIAR SESIÓN</button>
             <div className='text-center text-gray-400'>¿No tienes una cuenta? <b className='cursor-pointer text-white' onClick={() => setState("register")}>Regístrate.</b></div>
-            <div className='text-center text-gray-400'>Iniciar sesión como administrador <b className='cursor-pointer text-white' onClick={() => window.location.href = "/admin"}>aquí.</b></div>
+            <div className='text-center text-gray-400'>Iniciar sesión como administrador <b className='cursor-pointer text-white' onClick={() => window.location.href = "/admin"}>aquí,</b> o como psicólogo <b className='cursor-pointer text-white' onClick={() => window.location.href = "/psicologo"}>aquí.</b></div>
+            
             <p className='text-secondary-custom'>{message}</p>
             {loading && (
                 <div className='flex flex-col justify-center items-center gap-3 text-secondary-custom'>
