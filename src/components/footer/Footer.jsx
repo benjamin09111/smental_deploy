@@ -14,28 +14,15 @@ const Footer = ({ state, setState, tipo, setSearchMode }) => {
         </a>
       </div>
 
-      <div className={`${state === "posts" && "bg-gray-800"} p-1 rounded`}>
+      <div className={`${state === "crear" && "bg-gray-800"} p-1 rounded`}>
         <a
           className="inline-flex flex-col items-center text-xs font-medium text-primary-custom py-3 px-4 flex-grow"
-          onClick={() => setState("posts")}
+          onClick={() => setState("crear")}
         >
-          <span className="icon-[gridicons--pages] text-3xl bg-gradient-primary cursor-pointer"></span>
-          <span className="sr-only">Publics</span>
+          <span className="icon-[icons8--plus] text-3xl bg-gradient-primary cursor-pointer"></span>
+          <span className="sr-only">Add</span>
         </a>
       </div>
-
-      {
-        tipo !== "usuario" && (
-          <button className="relative inline-flex flex-col items-center text-xs font-medium text-primary-custom py-3 px-6 flex-grow" onClick={() => setState("crear")}>
-            <div className="absolute bottom-3 p-3 rounded-full border-4 border-transparent bg-third-custom">
-              <div className={`${state === "crear" && "bg-gray-800"} p-1 rounded`}>
-                <span className="icon-[icons8--plus] text-3xl bg-gradient-primary cursor-pointer"></span>
-              </div>
-            </div>
-            <span className="sr-only">Add</span>
-          </button>
-        )
-      }
 
 
       <div className={`${state === "buscar" && "bg-gray-800"} p-1 rounded`}>
@@ -51,31 +38,16 @@ const Footer = ({ state, setState, tipo, setSearchMode }) => {
         </a>
       </div>
 
-
-      {
-        tipo === "usuario" && (
-          <div className={`${state === "crear" && "bg-gray-800"} p-1 rounded`}>
-            <a
-              className="inline-flex flex-col items-center text-xs font-medium text-primary-custom py-3 px-4 flex-grow"
-              onClick={() => setState("crear")}
-            >
-              <span className="icon-[icons8--plus] text-3xl bg-gradient-primary cursor-pointer"></span>
-              <span className="sr-only">Crear</span>
-            </a>
-          </div>
-
-        )
-      }
-
-      <div className={`${state === "chat" && "bg-gray-800"} p-1 rounded`}>
+      <div className={`${state === "posts" && "bg-gray-800"} p-1 rounded`}>
         <a
           className="inline-flex flex-col items-center text-xs font-medium text-primary-custom py-3 px-4 flex-grow"
-          onClick={() => setState("chat")}
+          onClick={() => setState("posts")}
         >
-          <span className="icon-[cryptocurrency--chat] text-3xl cursor-pointer bg-gradient-primary"></span>
-          <span className="sr-only">Chatbot</span>
+          <span className="icon-[gridicons--pages] text-3xl bg-gradient-primary cursor-pointer"></span>
+          <span className="sr-only">Publics</span>
         </a>
       </div>
+
     </div>
   );
 };

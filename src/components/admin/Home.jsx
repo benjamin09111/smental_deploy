@@ -7,7 +7,7 @@ import Psico from "./Psico";
 const Home = () => {
     const [state, setState] = useState("posts");
     return (
-        <div className='h-[100vh] bg-gray-950 text-white pt-24'>
+        <div className='min-h-[100vh] bg-gray-950 text-white pt-24'>
             <div className='justify-center items-center flex text-3xl font-semibold mb-6'>
                 Administrador
             </div>
@@ -17,7 +17,7 @@ const Home = () => {
                 <a className='cursor-pointer p-2 rounded shadow bg-white text-black' onClick={()=>setState("reports")}>Reports</a>
                 <a className='cursor-pointer p-2 rounded shadow bg-white text-black' onClick={()=>setState("psico")}>Crear psicólogo</a>
             </nav>
-            <div className='flex justify-center items-center'>
+            <div className='flex justify-center items-center '>
                 {
                     state === "posts" && <Posts />
                 }
