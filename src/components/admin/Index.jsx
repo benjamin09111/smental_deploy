@@ -6,7 +6,7 @@ const Index = () => {
 
     const signAdmin = async () => {
         try {
-            const response = await fetch('http://localhost:3000/loginadmin', {
+            const response = await fetch('https://smental-backend.onrender.com/loginadmin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

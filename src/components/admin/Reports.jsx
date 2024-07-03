@@ -7,7 +7,7 @@ const Reports = () => {
 
 useEffect(()=>{
   const obtenerReportes = async()=> {
-    const res = await fetch("http://localhost:3000/get_reportes");
+    const res = await fetch("https://smental-backend.onrender.com/get_reportes");
 
     if(!res.ok){
       setMessage("Error de servidor.");

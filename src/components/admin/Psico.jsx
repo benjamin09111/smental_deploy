@@ -32,7 +32,7 @@ const Psico = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3000/create_psicologo', {
+            const response = await fetch('https://smental-backend.onrender.com/create_psicologo', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

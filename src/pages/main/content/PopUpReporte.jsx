@@ -17,7 +17,7 @@ const PopUpReporte = ({ nombre, setState, userId, publicationId }) => {
             const day = String(today.getDate()).padStart(2, '0'); // Asegura que el día tenga dos dígitos
             const fecha = `${year}-${month}-${day}`;
 
-            const response = await fetch('http://localhost:3000/report', {
+            const response = await fetch('https://smental-backend.onrender.com/report', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
