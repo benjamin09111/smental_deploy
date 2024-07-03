@@ -69,6 +69,7 @@ const Crear = () => {
         >
           Crear
         </button>
+        <p className="text-black mt-2 text-lg">Al crear una publicación, no es posible borrarla aún.</p>
       </section>
     </div>
   );

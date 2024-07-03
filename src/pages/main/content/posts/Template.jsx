@@ -13,7 +13,7 @@ const Template = ({ titulo, fecha, hashtag, descripcion, autor, index, imagen, t
         <b className='text-[1rem] text-gray-300 text-right'>Temática: {hashtag}</b>
         <p className='text-gray-300 font-semibold mt-4 text-xl'>"
           {
-            descripcion.length > 100 ?
+            tipo !== "psicologo" && descripcion.length > 100 ?
             descripcion.slice(0, 100) + '...'
               : descripcion
           }"</p>
