@@ -15,16 +15,16 @@ const Usuario = ({ publicacion, setPublicacion, hashtag, setHashtag }) => {
   };
 
   return (
-    <div className='flex flex-col gap-6'>
-      <div className="text-3xl text-gradient font-bold">
+    <div className='flex flex-col gap-6 text-2xl'>
+      <div className="text-3xl mb-4 text-primary-custom font-bold">
         Desahógate o comparte tus experiencias
       </div>
-      <div className="flex gap-10">
-        <span className="icon-[material-symbols--title] text-2xl  bg-gradient-primary"></span>
+      <div className="flex w-full gap-10">
+        <span className="icon-[material-symbols--title] text-3xl  bg-third-custom"></span>
         <input
           type="text"
           name="titulo"
-          className="input lg:w-1/3"
+          className="input w-full lg:w-1/3 text-black"
           placeholder="Título"
           value={publicacion.titulo}
           onChange={(e) =>
@@ -32,12 +32,12 @@ const Usuario = ({ publicacion, setPublicacion, hashtag, setHashtag }) => {
           }
         />
       </div>
-      <div className="flex gap-10">
-        <span className="icon-[material-symbols--description] text-2xl  bg-gradient-primary"></span>
+      <div className="flex w-full gap-10">
+        <span className="icon-[material-symbols--description] text-3xl  bg-third-custom"></span>
         <textarea
           type="text"
           name="descripcion"
-          className="input lg:w-1/3 resize-none h-16"
+          className="input w-full lg:w-1/3 resize-none h-16"
           placeholder="Descripción"
           value={publicacion.descripcion}
           onChange={(e) =>
@@ -45,12 +45,12 @@ const Usuario = ({ publicacion, setPublicacion, hashtag, setHashtag }) => {
           }
         ></textarea>
       </div>
-      <div className='mt-12'>
+      <div className='mt-12 w-full'>
         <HashtagInput hashtag={hashtag} setHashtag={setHashtag} />
       </div>
       <div className="flex my-6 gap-5 lg:w-1/2">
-        <input type="checkbox" name='check' checked={isChecked} onChange={handleCheckboxChange} />
-        <label onClick={handleCheckboxChange} htmlFor="check" className='text-gray-200'>Publicar de manera anónima</label>
+        <input type="checkbox" name='check' className='w-6' checked={isChecked} onChange={handleCheckboxChange} />
+        <label onClick={handleCheckboxChange} htmlFor="check" className='text-gray-500'>Publicar de manera anónima</label>
       </div>
     </div>
   );

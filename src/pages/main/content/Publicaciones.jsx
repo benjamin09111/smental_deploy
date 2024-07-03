@@ -15,6 +15,7 @@ const Publicaciones = ({ tipo }) => {
   useEffect(() => {
     const fetchPublications = async () => {
       setLoading(true);
+      setMessage("");
       try {
         const res = await fetch("http://localhost:3000/get_publications");
         const data = await res.json();
@@ -80,33 +81,33 @@ const Publicaciones = ({ tipo }) => {
     : publicaciones;
 
   return (
-    <div className='flex items-start w-full xl:pr-6 xl:py-8'>
-      <section className='flex flex-col lg:pl-12 lg:w-2/3'>
-        <div className='flex flex-col gap-6 px-4 lg:px-0 py-6'>
-          <h1 className='text-gradient text-3xl font-bold'>Conoce y comparte las experiencias usuarios</h1>
+    <div className='flex justify-center lg:justify-start lg:pl-12 items-start w-full'>
+      <section className='flex flex-col w-full lg:pl-12 lg:w-2/3 justify-center items-center'>
+        <div className='p-4 mt-1'>
+        <h1 className='text-primary-custom text-3xl font-bold'>Conoce y comparte las experiencias de usuarios</h1>
         </div>
-        {loading && <span className='icon-[eos-icons--loading] text-3xl text-blue-500'></span>}
-        <div>{message}</div>
-        <div className='justify-center items-center flex mb-4'>
+        
+        <div className='lg:hidden justify-center items-center bg-secondary-custom/40 flex rounded w-1/2 lg:1/4 mb-4 mt-4 pl-16 relative'>
+        <span className="icon-[ic--baseline-search] text-primary-custom text-3xl absolute top-1 left-1"></span>
           <input
             type="text"
             name='search'
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className='lg:hidden focus:outline-none rounded bg-transparent px-2 py-2'
-            style={{ border: "1px solid gray" }}
+            className='lg:hidden outline-none rounded bg-transparent px-2 py-2 text-black'
             placeholder='Buscar por temática...'
           />
         </div>
-        <div>{message2}</div>
+
+        <div>{message}</div>
         {filteredPublicaciones.length > 0 ? (
           filteredPublicaciones.map((publicacion, index) => (
-            <div key={index} className='flex flex-col px-3 pb-6 contenedor_publicacion'>
+            <div key={index} className='flex flex-col px-3 pb-6 w-full border-t-2 border-secondary-custom'>
               <div className='flex justify-between items-center pt-2 pb-1'>
                 <div className='flex items-center gap-6'>
                   <div className='flex items-center gap-2'>
-                    <span className="icon-[solar--user-speak-bold] text-lg bg-gradient-primary"></span>
-                    <b className='font-normal text-gray-100'>{publicacion.nombre}</b>
+                    <span className="icon-[solar--user-speak-bold] text-2xl bg-third-custom relative bottom-[-0.05rem]"></span>
+                    <b className='font-semibold text-2xl text-black'>{publicacion.nombre}</b>
                   </div>
                 </div>
                 <div>
@@ -127,33 +128,33 @@ const Publicaciones = ({ tipo }) => {
                       setSelectedPublicationId(publicacion.id);
                       setPopUp(true);
                     }}
-                    className="icon-[material-symbols--report] text-xl text-red-300 cursor-pointer hover:text-red-600"></span>
+                    className="icon-[material-symbols--report] text-xl text-red-600 cursor-pointer hover:text-red-700"></span>
                 </div>
               </div>
 
               <div className='flex flex-col gap-2'>
-                <div className='text-xl font-semibold'>{publicacion.titulo}</div>
-                <div className='text-lg text-gray-400 font-semibold'>Temática: {publicacion.tematica}</div>
-                <p className='text-gray-300 font-semibold'>{publicacion.descripcion}</p>
-                <b className='font-normal text-gray-500'>{publicacion.fecha}</b>
+                <div className='text-3xl text-primary-custom font-bold'>{publicacion.titulo} <div className='text-xl text-black font-normal'><b>#</b> {publicacion.tematica}</div></div>
+                
+                <p className='text-gray-700 text-xl font-semibold'>{publicacion.descripcion}</p>
+                <b className='font-normal text-xl text-gray-500'>{publicacion.fecha}</b>
               </div>
 
               <div className='flex items-center gap-3 '>
-                <div className='flex items-center mt-3 gap-2 p-2 rounded bg-gray-800 w-fit'>
-                  <span className="icon-[fluent--comment-16-regular] text-2xl"></span>
+                <div className='flex items-center mt-3 gap-2 p-2 rounded text-black w-fit'>
+                  <span className="icon-[fluent--comment-16-regular] text-3xl"></span>
                   <b>{publicacion.comentarios}</b>
                 </div>
 
-                <div className='flex items-center gap-2 flex-wrap w-full pt-3'>
+                <div className='flex items-center justify-center lg:items-left gap-2 flex-wrap w-full lg:w-1/2 pt-3 lg:ml-2'>
                   <input
                     type="text"
-                    className='input_coment'
+                    className='input_coment '
                     placeholder='Apoya con tu comentario'
                     value={comentarios[publicacion.id] || ''}
                     onChange={(e) => handleComentarioChange(publicacion.id, e.target.value)}
                   />
                   <button
-                    className='hover:text-secondary-custom text-gray-300'
+                    className='hover:text-secondary-custom text-xl text-gray-500'
                     onClick={() => handlePublicarComentario(publicacion.id)}
                   >
                     Publicar
@@ -162,45 +163,20 @@ const Publicaciones = ({ tipo }) => {
               </div>
               <div className='flex flex-col gap-1 my-3'>
                 {publicacion.comentarios > 0 && publicacion.comments.map(comment => (
-                  <div className='rounded py-1 px-2 bg-gray-800 text-white' key={comment._id}>
-                    <div className='flex gap-3 items-center'><b className='text-xl text-gray-200'>{comment.nombre}</b>
-                      <a className='text-gray-300'>ha comentado el {comment.fecha}</a></div>
+                  <div className='rounded py-1 px-2 text-black' key={comment._id}>
+                    <div className='flex gap-3 items-center'><b className='text-xl text-gray-800'>{comment.nombre}</b>
+                      <a className='text-gray-500'>ha comentado el {comment.fecha}</a></div>
                     <p>{comment.descripcion}</p>
                   </div>
                 ))}
               </div>
-
-              {tipo === "admin" && (
-                <button type='button' className='px-3 py-1 mt-2 text-white bg-red-400 hover:bg-red-500 rounded cursor-pointer lg:w-1/3'>
-                  Obtener información de usuario
-                </button>
-              )}
             </div>
           ))
         ) : (
           <div>No se encontraron publicaciones.</div>
         )}
-      </section>
-      <section className='w-1/3 py-6 lg:px-24 relative shadow hidden lg:block'>
-        <div className='flex items-center gap-3 fixed w-1/2 bg-gray-950 pt-6 pb-2 top-[10vh]'>
-          <span className="icon-[ic--outline-search] text-2xl"></span>
-          <input
-            type="text"
-            name='search'
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className='lg:w-1/3 focus:outline-none rounded bg-transparent px-2 py-2'
-            style={{ border: "1px solid gray" }}
-            placeholder='Buscar por temática...'
-          />
-        </div>
-        <div className='py-3 my-12 px-6 rounded bg-gray-900 flex flex-col gap-2'>
-          <h2 className='text-2xl'>Temáticas más buscadas en las publicaciones de usuarios</h2>
-          <b>#Soledad</b>
-          <b>#Depresión</b>
-          <b>#Tristeza</b>
-          <b>#Esperanza</b>
-        </div>
+        {loading && <div className='justify-center items-center flex my-4'>
+          <span className='icon-[eos-icons--loading] text-3xl text-secondary-custom'></span></div>}
       </section>
     </div>
   );

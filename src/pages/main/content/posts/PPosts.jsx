@@ -31,13 +31,12 @@ const PPosts = () => {
   return (
     <>
     {loading && <span className="icon-[eos-icons--loading] text-3xl text-blue-500"></span>}
-    <div className="text-red-500 mt-2">{message}</div>
+    <div className="text-red-500">{message}</div>
       {
         posts.length > 0 && posts.map((post, index) => {
             return (
-              <Template index={index} titulo={post.titulo} fecha={post.fecha} hashtag={post.tematica} descripcion={post.descripcion} autor={post.autor} imagen={post.imagen} />
+              <Template index={index} titulo={post.titulo} fecha={post.fecha} hashtag={post.tematica} descripcion={post.descripcion} autor={post.autor} imagen={post.imagen} tipo={"psicologo"} link={""} />
             )
-          
         })
       }
     </>

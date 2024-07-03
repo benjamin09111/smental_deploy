@@ -31,11 +31,11 @@ const HashtagInput = ({ hashtag, setHashtag }) => {
   };
 
   return (
-    <div>
-      <div className="flex gap-10">
-        <span className="icon-[icon-park-solid--topic] text-2xl bg-gradient-primary"></span>
+    <div className='w-full'>
+      <div className="flex gap-10 w-full">
+        <span className="icon-[icon-park-solid--topic] text-3xl bg-third-custom"></span>
         <input
-          className='input lg:w-1/3'
+          className='input w-full lg:w-1/3'
           type="text"
           value={hashtag}
           onChange={handleInputChange}

@@ -41,21 +41,15 @@ const Navbar = ({ tipo, setState }) => {
     }, []);
 
     return (
-        <nav style={{ height: "10vh", zIndex: "999999", transition: "top 0.3s" }} className={`bg-gray-900 p-4 flex items-center justify-between fixed ${visible ? "top-0" : "-top-[92px]"} lg:top-0 left-0 w-full`}>
+        <nav style={{ height: "8vh", zIndex: "999999", transition: "top 0.3s" }} className={`bg-secondary-custom px-4 flex items-center justify-between fixed ${visible ? "top-0" : "-top-[25rem]"} lg:top-0 left-0 w-full`}>
             <div className="flex items-center space-x-2">
-                <span className="icon-[mdi--head-heart-outline] size-9 text-primary-custom "></span>
-                <span className="text-primary-custom font-semibold text-lg whitespace-nowrap">S-Mental</span>
+                <span className="icon-[mdi--head-heart-outline] size-12 text-primary-custom "></span>
+                <span className="text-primary-custom font-semibold text-2xl whitespace-nowrap">S-Mental</span>
             </div>
             
-            <div className='font-bold'>
+            <div className='font-semibold text-xl text-primary-custom/90'>
                 {localStorage.getItem("nombre")}
             </div>
-
-            {showUserPopup && (
-                <div ref={popupRef} className="absolute top-0 right-0 rounded-lg shadow-lg p-4">
-                    <UserPopup setState={setState} />
-                </div>
-            )}
         </nav>
     );
 }

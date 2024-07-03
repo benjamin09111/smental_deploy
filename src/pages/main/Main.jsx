@@ -28,9 +28,9 @@ const Main = () => {
 
     return (
         <>
-            <div style={{ minHeight: "100vh" }} className='flex flex-col bg-gradient-secondary text-white'>
+            <div style={{ minHeight: "100vh" }} className='flex flex-col bg-white text-white'>
                 <div>
-                    {searchMode ? <NavbarHome tipo={tipo} /> : <Navbar tipo={tipo} state={state} setState={handleStateChange} />}
+                <Navbar tipo={tipo} state={state} setState={handleStateChange} />
                 </div>
                 <main style={{ paddingTop: "10vh" }} className='flex w-full'>
                     <Aside state={state} tipo={tipo} setState={handleStateChange} />

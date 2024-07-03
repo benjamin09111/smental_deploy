@@ -107,19 +107,21 @@ const Buscar = () => {
   };
 
   return (
-    <div className="flex items-start w-full">
-      <section className='flex px-4 lg:px-0 flex-col lg:pl-12 lg:w-2/3'>
-        <h1 className="text-3xl text-gradient font-bold mt-6">Encuentra de forma rápida psicólogos profesionales y confiables según tus preferencias.</h1>
-        <div className="flex gap-3 flex-col pb-6 lg:pb-0">
-          <p className="text-gray-300 text-lg mt-2">Búsqueda filtrada</p>
-          <div className="flex gap-3 flex-wrap">
+    <div className="flex items-start lg:pl-28">
+      <section className='flex flex-col gap-2 lg:gap-8 lg:w-2/3'>
+        <div className="p-4">
+        <h1 className="text-3xl text-primary-custom font-bold mt-2">Encuentra de forma rápida psicólogos profesionales y confiables según tus preferencias.</h1>
+        </div>
+        <div className="flex flex-col pb-6 lg:pb-0">
+          <p className="text-gray-700 font-semibold text-center text-xl mt-2">Búsqueda filtrada</p>
+          <div className="flex flex-wrap gap-3 px-4 text-black">
             {Object.keys(filterOptions).map((filterType) => (
-              <div key={filterType} className="flex flex-col text-black">
-                <b className="text-white">{filterType.charAt(0).toUpperCase() + filterType.slice(1)}</b>
+              <div key={filterType} className="flex flex-col w-full">
+                <b>{filterType.charAt(0).toUpperCase() + filterType.slice(1)}</b>
                 <select
                   value={filters[filterType]}
                   onChange={(e) => handleFilterChange(filterType, e.target.value)}
-                  className="mt-1 p-2 border border-gray-300 rounded"
+                  className="mt-1 p-2 border border-gray-300 rounded w-full"
                 >
                   <option value="">Selecciona una opción</option>
                   {filterOptions[filterType].map((option) => (
@@ -131,7 +133,7 @@ const Buscar = () => {
           </div>
         </div>
         {loading && (<span className="text-3xl text-blue-500 icon-[eos-icons--loading]"></span>)}
-        <div className="flex flex-wrap gap-6">
+        <div className="flex flex-wrap lg:justify-around lg:gap-8 gap-5 px-4">
           {filteredPsicologos.map((psicologo, index) => (
             <Card
               key={index}
@@ -154,17 +156,8 @@ const Buscar = () => {
           ))}
         </div>
       </section>
-      <section className='w-1/3 py-6 lg:px-24 shadow hidden lg:block'>
-        <div className='py-3 px-6 rounded bg-gray-900 flex flex-col gap-2'>
-          <h2 className='text-2xl'>Temáticas más buscadas en las publicaciones de usuarios</h2>
-          <b>#Soledad</b>
-          <b>#Depresión</b>
-          <b>#Tristeza</b>
-          <b>#Esperanza</b>
-        </div>
-      </section>
     </div>
-  )
-}
+  );
+};
 
 export default Buscar;

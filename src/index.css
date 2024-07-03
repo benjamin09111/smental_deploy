@@ -72,10 +72,9 @@
 }
 
 .input {
-  color: rgb(244, 244, 244);
+  color: black;
   background: none;
   border-bottom: 1px solid gray;
-  width: 80%;
 }
 
 .input:focus {
@@ -96,7 +95,8 @@
 
 .input_coment {
   background: transparent;
-  border-bottom: 1px solid var(--primary-color);
+  border-bottom: 2px solid #C1E8FF;
+  font-size: 1.2rem;
 }
 
 .input_coment:focus {

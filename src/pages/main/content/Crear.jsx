@@ -58,26 +58,17 @@ const Crear = () => {
   };
 
   return (
-    <div className="flex items-start w-full">
-      <section className='flex flex-col lg:pl-12 lg:w-2/3 px-4 lg:px-0 pt-6'>
+    <div className="flex items-start lg:pl-28">
+      <section className='flex flex-col lg:w-2/3 px-4 lg:px-0 pt-6'>
         <Usuario hashtag={hashtag} setHashtag={setHashtag} publicacion={publicacion} setPublicacion={setPublicacion} />
-        <div className={message === "Publicación creada." ? `text-blue-500 mb-4` : `text-red-500 mb-4`}>{message}</div>
+        <div className={message === "Publicación creada." ? `text-secondary-custom mb-4 text-xl` : `text-red-500 mb-4 text-xl`}>{message}</div>
         <button
-          className="lg:w-1/2 bg-gradient-primary py-2"
+          className="lg:w-1/3 text-2xl bg-third-custom py-2"
           type="button"
           onClick={create}
         >
           Crear
         </button>
-      </section>
-      <section className='w-1/3 py-6 lg:px-24 shadow hidden lg:block'>
-        <div className='py-3 px-6 rounded bg-gray-900 flex flex-col gap-2'>
-          <h2 className='text-2xl'>Temáticas más buscadas en las publicaciones de usuarios</h2>
-          <b>#Soledad</b>
-          <b>#Depresión</b>
-          <b>#Tristeza</b>
-          <b>#Esperanza</b>
-        </div>
       </section>
     </div>
   );
