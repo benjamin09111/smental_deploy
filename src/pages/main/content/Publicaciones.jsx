@@ -148,7 +148,7 @@ const Publicaciones = ({ tipo }) => {
                 <div className='flex items-center justify-center lg:items-left gap-2 flex-wrap w-full lg:w-1/2 pt-3 lg:ml-2'>
                   <input
                     type="text"
-                    className='input_coment '
+                    className='input_coment text-black'
                     placeholder='Apoya con tu comentario'
                     value={comentarios[publicacion.id] || ''}
                     onChange={(e) => handleComentarioChange(publicacion.id, e.target.value)}
