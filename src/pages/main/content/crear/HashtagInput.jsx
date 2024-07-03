@@ -51,19 +51,20 @@ const HashtagInput = ({ hashtag, setHashtag }) => {
       {(hashtag !== "" && !close) && (
         <>
           <p className='underline mt-4 mb-2'>Temáticas sugeridas</p>
-          <ul className='bg-gray-900 text-gray-300 rounded h-32 overflow-y-auto'>
+          <ul className='bg-secondary-custom text-gray-900 rounded max-h-36 overflow-y-auto'>
             {suggestedHashtags.length > 0 ? (
               suggestedHashtags.map((hashtag, index) => (
+            <>
                 <li
-                  className='cursor-pointer hover:bg-gray-700 pl-4 py-1'
+                  className='cursor-pointer hover:bg-fourth-custom text-white pl-4'
                   key={index}
                   onClick={() => handleHashtagSelect(hashtag)}
                 >
                   {hashtag}
-                </li>
+                </li></>
               ))
             ) : (
-              <li className='pl-4 py-1 text-gray-300'>No hay sugerencias</li>
+              <></>
             )}
           </ul>
         </>
