@@ -18,7 +18,7 @@ const Buscar = () => {
     const fetchPsicologos = async () => {
       setLoading(true);
       try {
-        const response = await fetch('http://localhost:3000/get_psicologos');
+        const response = await fetch('https://smental-backend.onrender.com/get_psicologos');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }

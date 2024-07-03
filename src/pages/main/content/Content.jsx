@@ -5,7 +5,6 @@ import Buscar from "./Buscar";
 import ChatBot from "./ChatBot";
 import Terminos from './Terminos';
 import Posts from "./Posts";
-import filtrarPubli from "./filtrarPubli";
 
 const Content = ({ setState, state, tipo, setTipo }) => {
     return (

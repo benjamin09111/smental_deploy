@@ -4,8 +4,8 @@ import Animation from "../../Animation";
 const Tutorial = () => {
     const [state, setState] = useState("uno");
     return (
-        <div style={{minHeight: "100vh"}} className='bg-gradient-secondary text-white flex justify-center items-center lg:px-96'>
-            <div className='flex items-center justify-center px-32'>
+        <div style={{minHeight: "100vh"}} className='bg-white text-black text-xl flex justify-center items-center lg:px-96'>
+            <div className='flex items-center justify-center lg:px-32'>
             {
                 state === "uno" && (
                     <Animation duration={1.3}>

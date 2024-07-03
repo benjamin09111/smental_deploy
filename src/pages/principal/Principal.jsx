@@ -22,7 +22,7 @@ const Principal = ({ terminos, setTerminos }) => {
     }, [])
 
     return (
-        <div style={{ minHeight: "100vh" }} className="bg-gradient-secondary pt-[10vh] flex flex-col w-full">
+        <div style={{ minHeight: "100vh" }} className="bg-white text-xl text-black pt-8 lg:pt-[10vh] flex flex-col w-full">
             {
                 abrir && <Overlay setAbrir={setAbrir} />
             }
@@ -31,19 +31,22 @@ const Principal = ({ terminos, setTerminos }) => {
                 <div className="one ">
                     <Animation duration={1}>
                         <div className="flex flex-col gap-4">
-                            <h1 className="text-5xl font-bold text-gradient">BIENVENIDO A S-MENTAL SIN NOMBRE</h1>
-                            <p className="font-semibold text-white text-lg text-right">Tu espacio seguro.</p>
-                            <p className="text-white mt-2">Un espacio libre y seguro para compartir y expresar tus emociones. Comparte con la comunidad y encuentra lo que necesitas.</p>
+                            <h1 className="text-5xl font-bold text-primary-custom">RED S-MENTAL</h1>
+                            <p className="text-black mt-2">Un espacio libre y seguro para compartir y expresar tus emociones. Comparte con la comunidad y encuentra lo que necesitas.</p>
                             <b type="button" className="cursor-pointer text-gray-400 font-semibold hover:text-gray-300 text-left" onClick={() => {
                                 localStorage.removeItem("tutorial");
                                 window.location.reload();
                             }}>VER PRESENTACIÓN DE LA APP</b>
-                            <b type="button" className="text-gray-400 cursor-pointer font-semibold hover:text-gray-300 text-left">CONTACTARSE CON EL SOPORTE</b>
-                            <b type="button" className="text-gray-400 cursor-pointer font-semibold hover:text-gray-300 text-left" onClick={()=>setAbrir(!abrir)}>¿CÓMO SER PSICÓLOGO DE LA APP?</b>
+                            {
+                                //<b type="button" className="text-gray-400 cursor-pointer font-semibold hover:text-gray-300 text-left">CONTACTARSE CON EL SOPORTE</b>
+                            }
+                            {
+                                //<b type="button" className="text-gray-400 cursor-pointer font-semibold hover:text-gray-300 text-left" onClick={()=>setAbrir(!abrir)}>¿CÓMO SER PSICÓLOGO DE LA APP?</b>
+                            }
                         </div>
                     </Animation>
                 </div>
-                <div className="flex flex-col w-full lg:pt-0 pt-12 two pb-12 lg:pb-0 ">
+                <div className="flex flex-col w-full lg:pt-0 two pb-12 lg:pb-0 ">
                     {state === "login" && <Animation duration={0.5}>
                         <Login setState={setState} /></Animation>}
                     {state === "register" && <Animation duration={0.5}>
@@ -56,7 +59,7 @@ const Principal = ({ terminos, setTerminos }) => {
             <div className="absolute hidden lg:block bottom-0 w-full olas">
                 <div className="absolute bottom-0 w-full">
                     <Wave
-                        fill="#40c7e57b"
+                        fill="#035569"
                         paused={false}
                         options={
                             {
@@ -70,7 +73,7 @@ const Principal = ({ terminos, setTerminos }) => {
                 </div>
                 <div className="absolute bottom-0 w-full">
                     <Wave
-                        fill="#9f99f5ae"
+                        fill="#C1E8FF"
                         paused={false}
                         options={
                             {
@@ -84,7 +87,7 @@ const Principal = ({ terminos, setTerminos }) => {
                 </div>
                 <div className="absolute bottom-0 w-full">
                     <Wave
-                        fill="#40c7e5e9"
+                        fill="#035569"
                         paused={false}
                         options={
                             {

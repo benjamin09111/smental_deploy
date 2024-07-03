@@ -33,7 +33,7 @@ const Crear = () => {
 
     try {
       console.log(nuevaPublicacion);
-      const response = await fetch('http://localhost:3000/create_publication', {
+      const response = await fetch('https://smental-backend.onrender.com/create_publication', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

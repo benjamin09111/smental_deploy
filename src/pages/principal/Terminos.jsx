@@ -2,9 +2,9 @@ const Terminos = ({setTerminos}) => {
     return (
         <>
         <div className="bg_overlay"></div>
-        <div className='overlay bg-gradient-secondary p-6 h-5/6 lg:w-1/2 w-5/6 pt-6 overflow-y-auto rounded-lg flex flex-col gap-10 text-white'>
+        <div className='overlay bg-white text-xl p-6 h-5/6 lg:w-1/2 w-5/6 pt-6 overflow-y-auto rounded-lg flex flex-col gap-10 text-black'>
             <div className='text-3xl cursor-pointer flex w-full justify-end' onClick={()=> setTerminos(false)} >&times;</div>
-            <h1 className="text-gradient text-4xl text-center">Términos y Condiciones de Uso</h1>
+            <h1 className="text-primary-custom text-4xl font-semibold text-center">Términos y Condiciones de Uso</h1>
             <p>Por favor, lee atentamente los siguientes términos y condiciones antes de utilizar nuestra aplicación de red social de salud mental. Al acceder y utilizar esta aplicación, aceptas cumplir con estos términos y condiciones. Si no estás de acuerdo con alguno de estos términos, por favor, abstente de utilizar la aplicación.</p>
 
             <h2>1. Descripción de la Aplicación</h2>
@@ -24,7 +24,7 @@ const Terminos = ({setTerminos}) => {
 
             <p>Al utilizar esta aplicación, aceptas estos términos y condiciones. ¡Gracias por ser parte de nuestra comunidad!</p>
 
-            <div className='text-2xl cursor-pointer text-center bg-gradient-primary py-3' onClick={()=> setTerminos(false)} >ACEPTAR</div>
+            <div className='text-2xl cursor-pointer text-center bg-secondary-custom text-black py-3' onClick={()=> setTerminos(false)} >ACEPTAR</div>
         </div>
         </>
     )

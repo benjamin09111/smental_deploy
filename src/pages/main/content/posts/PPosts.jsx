@@ -9,7 +9,7 @@ const PPosts = () => {
     const getting = async() => {
       setLoading(true);
       try {
-        const res = await fetch("http://localhost:3000/get-posts");
+        const res = await fetch("https://smental-backend.onrender.com/get-posts");
 
         if (!res.ok){
           setMessage("No se han podido obtener los artículos.");

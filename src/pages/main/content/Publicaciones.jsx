@@ -17,7 +17,7 @@ const Publicaciones = ({ tipo }) => {
       setLoading(true);
       setMessage("");
       try {
-        const res = await fetch("http://localhost:3000/get_publications");
+        const res = await fetch("https://smental-backend.onrender.com/get_publications");
         const data = await res.json();
 
         if (!res.ok) {
@@ -53,7 +53,7 @@ const Publicaciones = ({ tipo }) => {
         publicacion_id: publicacionId
       };
       console.log(nuevo_comentario);
-      const res = await fetch('http://localhost:3000/comment', {
+      const res = await fetch('https://smental-backend.onrender.com/comment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -100,6 +100,9 @@ const Publicaciones = ({ tipo }) => {
         </div>
 
         <div>{message}</div>
+        {
+          loading && <span className='icon-[eos-icons--bubble-loading] text-2xl bg-gradient-primary m-2'></span>
+        }
         {filteredPublicaciones.length > 0 ? (
           filteredPublicaciones.map((publicacion, index) => (
             <div key={index} className='flex flex-col px-3 pb-6 w-full border-t-2 border-secondary-custom'>
@@ -173,7 +176,7 @@ const Publicaciones = ({ tipo }) => {
             </div>
           ))
         ) : (
-          <div>No se encontraron publicaciones.</div>
+          <div className='text-xl text-gray-800 font-semibold'>No se encontraron publicaciones.</div>
         )}
         {loading && <div className='justify-center items-center flex my-4'>
           <span className='icon-[eos-icons--loading] text-3xl text-secondary-custom'></span></div>}
