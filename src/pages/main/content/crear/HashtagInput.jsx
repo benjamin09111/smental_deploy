@@ -13,7 +13,13 @@ const HashtagInput = ({ hashtag, setHashtag }) => {
 
   useEffect(() => {
     // Simular una llamada a la API para obtener los hashtags existentes
-    setAlreadyHashtags(["uno", "dos", "tres", "cuatro", "cinco"]);
+    setAlreadyHashtags(["Depresión", "Tristeza", "Universidad", "Colegio", "Amistad",
+      "AmorNoCorrespondido", "Ansiedad", "Autoestima", "Bullying", "Culpabilidad",
+      "Decepción", "Desamor", "Desconexión", "Desesperanza", "Divorcio",
+      "Duelo", "Estrés", "Familia", "Fracaso", "Infidelidad",
+      "Inseguridad", "Miedo", "RelacionesTóxicas", "Rechazo", "Soledad",
+      "Superación", "Traición", "Vergüenza", "Violencia", "Confusión", "Duda", "Confesión", "Kpop", "Música", "Padres", "Ayuda", "Amor", "Ansiedad", "Dinero"
+  ]);
   }, []);
 
   const handleInputChange = (event) => {

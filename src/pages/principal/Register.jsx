@@ -49,9 +49,12 @@ const Register = ({ setState }) => {
             <h2 className='text-4xl text-center font-bold'>REGISTER</h2>
             <div className='flex gap-10'>
             <span className="icon-[mdi--user] text-2xl  bg-third-custom"></span>
-                <input type="text" name='correo' placeholder="Usuario" className='input w-full w-full'
+                <input type="text" name='correo' placeholder="Usuario" className='input w-full'
                     value={data.username} onChange={(e) => setData({ ...data, username: e.target.value })} />
             </div>
+            {
+                    data.username.length > 0 && <p className='text-xs text-center underline'>Este nombre se verá en la aplicación (en caso de ser público) y sirve para iniciar sesión. Se recomienda no utilizar un nombre real.</p>
+                }
             <div className='flex gap-10'>
                 <span className="icon-[mdi--password] text-2xl  bg-third-custom"></span>
                 <input type="password" placeholder="Contraseña" name='password' className='input w-full'
@@ -62,9 +65,6 @@ const Register = ({ setState }) => {
                     <span className="icon-[mdi--user] text-2xl  bg-third-custom"></span>
                     <input type="text" name='nombre' className='input w-full' placeholder="Nombre" value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} />
                 </div>
-                {
-                    data.name.length > 0 && <p className='text-xs text-center underline'>Este nombre se verá en la aplicación. Se recomienda no utilizar un nombre real.</p>
-                }
             </div>
             <div className='flex gap-10'>
                 <span className="icon-[ic--sharp-email] text-2xl  bg-third-custom"></span>

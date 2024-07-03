@@ -30,7 +30,7 @@ const PPosts = () => {
 
   return (
     <>
-    {loading && <span className="icon-[eos-icons--loading] text-3xl text-blue-500"></span>}
+    <div className="flex justify-center items-center">{loading && <span className="icon-[eos-icons--loading] text-3xl text-blue-500"></span>}</div>
     <div className="text-red-500">{message}</div>
       {
         posts.length > 0 && posts.map((post, index) => {

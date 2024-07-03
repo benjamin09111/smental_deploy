@@ -100,9 +100,6 @@ const Publicaciones = ({ tipo }) => {
         </div>
 
         <div>{message}</div>
-        {
-          loading && <span className='icon-[eos-icons--bubble-loading] text-2xl bg-gradient-primary m-2'></span>
-        }
         {filteredPublicaciones.length > 0 ? (
           filteredPublicaciones.map((publicacion, index) => (
             <div key={index} className='flex flex-col px-3 pb-6 w-full border-t-2 border-secondary-custom'>

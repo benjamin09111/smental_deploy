@@ -49,7 +49,7 @@ const Buscar = () => {
   });
 
   const filterOptions = {
-    sexo: ["Masculino", "Femenino"],
+    sexo: ["M", "F"],
     metodo: ["Online", "Presencial", "Presencial y en línea"],
     pais: ["Chile"],
     region: [
@@ -113,7 +113,7 @@ const Buscar = () => {
         <h1 className="text-3xl text-primary-custom font-bold mt-2">Encuentra de forma rápida psicólogos profesionales y confiables según tus preferencias.</h1>
         </div>
         <div className="flex flex-col pb-6 lg:pb-0">
-          <p className="text-gray-700 font-semibold text-center text-xl mt-2">Búsqueda filtrada</p>
+          <p className="text-gray-700 font-semibold text-center text-xl mt-2 mb-1">Búsqueda filtrada: realice un filtro a la vez</p>
           <div className="flex flex-wrap gap-3 px-4 text-black">
             {Object.keys(filterOptions).map((filterType) => (
               <div key={filterType} className="flex flex-col w-full">
